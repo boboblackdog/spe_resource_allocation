@@ -92,31 +92,24 @@ public class Employee {
 
     }
 
-    public String getNik() {
-        return nik;
-    }
+    public String getNik() { return nik; }
+    public void setNik(String nik) { this.nik = nik; }
 
-    public String getFullname() {
-        return fullname;
-    }
+    public String getFullname() { return fullname; }
+    public void setFullName(String fullname) { this.fullname = fullname; }
 
-    public String getEmail() {
-        return email;
-    }
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
 
-    public String getPhone() {
-        return phone;
-    }
+    public String getPhone() { return phone; }
+    public void setPhone(String phone) { this.phone = phone; }
 
-    public String getPosition() {
-        return position;
-    }
+    public String getPosition() { return position; }
+    public void setPosition(String position) { this.position = position; }
 
-    public String getGrade() {
-        return grade;
-    }
+    public String getGrade() { return grade; }
+    public void setGrade(String grade) { this.grade = grade; }
 
-    public String getStatus() {
-        return status;
-    }
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
 }
