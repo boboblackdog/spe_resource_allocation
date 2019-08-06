@@ -13,7 +13,6 @@ import org.springframework.data.repository.query.Param;
  *
  * @author rakhadjo
  */
-//@RepositoryRestResource(collectionResourceRel = "refTroops", path = "spera")
 public interface refTroopsRepository extends MongoRepository<refTroops, String>{
     refTroops findByNik(@Param("nik") String nik);
 }
