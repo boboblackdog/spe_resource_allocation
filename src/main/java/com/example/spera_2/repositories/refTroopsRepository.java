@@ -6,10 +6,8 @@
 package com.example.spera_2.repositories;
 
 import com.example.spera_2.models.refTroops;
-//import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.repository.query.Param;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 /**
  *
