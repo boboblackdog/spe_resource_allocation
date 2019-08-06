@@ -1,8 +1,5 @@
 com/example/spera_2/models/Employee.class
 com/example/spera_2/models/refTroops.class
-com/example/spera_2/models/refStatus.class
-com/example/spera_2/models/refGrades.class
 com/example/spera_2/Spera2Application.class
 com/example/spera_2/repositories/refTroopsRepository.class
-com/example/spera_2/models/refPositions.class
 com/example/spera_2/controller/refTroopsController.class
