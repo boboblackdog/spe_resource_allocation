@@ -14,6 +14,7 @@ import java.util.List;
 import javax.validation.Valid;
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -55,6 +56,26 @@ public class refTroopsController {
             return (new Document()).append("rc", "11").append("message", "invalid request format");
         }
     }
+    
+    /*
+    IN DEVELOPMENT: 
+    JSON OBJECT DIRECT RETURN (to stop using Document Object)
+    */
+//    @RequestMapping(value = "/jsonobject", method = RequestMethod.POST)
+//    public String returnByNik(@Valid @RequestBody NikRequest nr) throws Exception {
+//        try {
+//            Integer.parseInt(nr.getNik());
+//            if (repo.findByNik(nr.getNik())==null) {
+//                return ((new JSONObject()).put("rc", "10").put("message", "JSON entry DNE")).toString();
+//            } else {
+//                return ((new JSONObject()).put("rc", "00").put("message", "success").put("data", 
+//                        (new Employee(repo.findByNik(nr.getNik()), false ))
+//                        )).toString();
+//            }
+//        } catch (Exception e) {
+//            return ((new JSONObject()).put("rc", "11").put("message", "JSON Incorrect format")).toString();
+//        }
+//    }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public Document searchByNik(@Valid @RequestBody NikRequest nr) throws Exception {

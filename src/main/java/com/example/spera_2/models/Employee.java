@@ -84,7 +84,7 @@ public class Employee {
                 this.grade = finalGrade;
                 this.position = finalPosition;
             } catch (Exception e) {
-                
+                this.status = this.grade = this.position = "null";
             }
             
         }
