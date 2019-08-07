@@ -37,58 +37,29 @@ public class Employee {
         this.status = status;
     }
 
-    public Employee(refTroops ref, boolean hardcode) {
+    public Employee(refTroops ref) {
         this.nik = ref.getNik();
         this.fullname = ref.getName();
         this.email = ref.getEmail();
         this.phone = ref.getMobile();
-        if (hardcode) {
-            //position
-            switch (Integer.parseInt(ref.getPosId())) {
-                case 1: this.position = "Mobile Android Developer"; break;
-                case 2: this.position = "Mobile iOS Developer"; break;
-                default: this.position = "Software Engineer"; break;
-            }
-            //grade
-            switch (Integer.parseInt(ref.getGradeId())) {
-                case 1: this.grade = "middle"; break;
-                case 2: this.grade = "middle"; break;
-                case 3: this.grade = "middle"; break;
-                case 4: this.grade = "senior"; break;
-                case 5: this.grade = "supervisor"; break;
-                case 6: this.grade = "specialist"; break;
-                case 7: this.grade = "head of supervisor"; break;
-                default: this.grade = "junior"; break;
-            }
-            //status
-            switch (Integer.parseInt(ref.getStat())) {
-                case 1: this.status = "active"; break;
-                case 2: this.status = "resigned"; break;
-                default: this.status = "waiting"; break;
-            }
-        } else {
-            
-            MongoClient client = new MongoClient("localhost", 27017);
-            MongoDatabase database = client.getDatabase("spera");
-            
-            MongoCollection<Document> refStatusColl = database.getCollection("refStatus");
-            MongoCollection<Document> refGradesColl = database.getCollection("refGrades");
-            MongoCollection<Document> refPositionsColl = database.getCollection("refPositions");
-            
-            try {
-                String finalStatus = refStatusColl.find(eq("status", ref.getStat())).first().getString("status_name");
-                String finalGrade = refGradesColl.find(eq("grade_id", ref.getGradeId())).first().getString("grade_name");
-                String finalPosition = refPositionsColl.find(eq("position_id", ref.getPosId())).first().getString("position_name");
-                
-                this.status = finalStatus;
-                this.grade = finalGrade;
-                this.position = finalPosition;
-            } catch (Exception e) {
-                this.status = this.grade = this.position = "null";
-            }
-            
+        
+        MongoClient client = new MongoClient("localhost", 27017);
+        MongoDatabase database = client.getDatabase("spera");
+        
+        MongoCollection<Document> refStatusColl = database.getCollection("refStatus");
+        MongoCollection<Document> refGradesColl = database.getCollection("refGrades");
+        MongoCollection<Document> refPositionsColl = database.getCollection("refPositions");
+        
+        try {
+            String finalStatus = refStatusColl.find(eq("status", ref.getStat())).first().getString("status_name");
+            String finalGrade = refGradesColl.find(eq("grade_id", ref.getGradeId())).first().getString("grade_name");
+            String finalPosition = refPositionsColl.find(eq("position_id", ref.getPosId())).first().getString("position_name");
+            this.status = finalStatus;
+            this.grade = finalGrade;
+            this.position = finalPosition;
+        } catch (Exception e) {
+            this.status = this.grade = this.position = "null";
         }
-
     }
 
     public String getNik() { return nik; }

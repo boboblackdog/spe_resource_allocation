@@ -16,7 +16,5 @@ public class NikRequest {
     public void setNik(String nik) { this.nik = nik; }
     
     public NikRequest() {}
-    public NikRequest(String nik) {
-        this.nik = nik;
-    }
+    public NikRequest(String nik) { this.nik = nik; }
 }

@@ -36,7 +36,7 @@ public class refTroopsController {
     public List<Employee> getAllTroops() {
         List<Employee> list = new ArrayList<>();
         for (refTroops ref : repo.findAll()) {
-            list.add(new Employee(ref, true));
+            list.add(new Employee(ref));
         }
         return list;
     }
@@ -50,9 +50,9 @@ public class refTroopsController {
                 return (new Document()).append("rc", "10").append("message", "entry DNE");
             } else {
                 return (new Document()).append("rc", "00").append("message", "success")
-                        .append("data", (new Employee(repo.findByNik(nik), false)));
+                        .append("data", (new Employee(repo.findByNik(nik))));
             }
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             return (new Document()).append("rc", "11").append("message", "invalid request format");
         }
     }
@@ -86,9 +86,9 @@ public class refTroopsController {
             } else {
                 return (new Document()).append("rc", "00").append("message", "success")
                         .append("data", (new Employee(
-                                repo.findByNik(nr.getNik()), false)));
+                                repo.findByNik(nr.getNik()))));
             }
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             return (new Document()).append("rc", "11").append("message", "invalid request format");
         }
     }
