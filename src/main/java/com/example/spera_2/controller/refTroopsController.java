@@ -7,6 +7,8 @@ package com.example.spera_2.controller;
 
 import com.example.spera_2.models.Employee;
 import com.example.spera_2.models.NikRequest;
+import com.example.spera_2.models.TroopRequest;
+import com.example.spera_2.models.UserLogin;
 import com.example.spera_2.models.refTroops;
 import com.example.spera_2.repositories.refTroopsRepository;
 import java.util.ArrayList;
@@ -26,19 +28,40 @@ import org.springframework.web.bind.annotation.RestController;
  * @author rakhadjo
  */
 @RestController
-@RequestMapping("/user/user-info/")
+@RequestMapping("/api")
 public class refTroopsController {
 
     @Autowired
     private refTroopsRepository repo;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public List<Employee> getAllTroops() {
-        List<Employee> list = new ArrayList<>();
-        for (refTroops ref : repo.findAll()) {
-            list.add(new Employee(ref));
-        }
-        return list;
+//    @RequestMapping(value = "/troops/list", method = RequestMethod.GET)
+//    public List<Employee> getAllTroops() {
+//        List<Employee> list = new ArrayList<>();
+//        for (refTroops ref : repo.findAll()) {
+//            list.add(new Employee(ref));
+//        }
+//        return list;
+//    }
+    
+    @RequestMapping(value = "/troops/list", method = RequestMethod.POST)
+    public Document getTroopsList(@Valid @RequestBody TroopRequest tr) {
+        
+        try {
+            if (tr.getTroops().equals("get-all")) {
+                List<Employee> list = new ArrayList<>();
+                for (refTroops ref : repo.findAll()) {
+                    list.add(new Employee(ref));
+                }
+                return (new Document()).append("rc", "00").append("message", "success")
+                        .append("role", "admin")
+                        .append("menu", "home, troops, account")
+                        .append("data", list);
+            } else {
+                return (new Document()).append("rc", "12").append("message", "command undefined");
+            }
+        } catch (Exception e) {
+            return (new Document()).append("rc", "11").append("message", "invalid request format");
+        }   
     }
 
     @RequestMapping(value = "/{nik}", method = RequestMethod.GET)
@@ -53,6 +76,22 @@ public class refTroopsController {
                         .append("data", (new Employee(repo.findByNik(nik))));
             }
         } catch (NumberFormatException e) {
+            return (new Document()).append("rc", "11").append("message", "invalid request format");
+        }
+    }
+    
+    @RequestMapping(value = "/user/login", method = RequestMethod.POST)
+    public Document loginUser(@Valid @RequestBody UserLogin ul) {
+        try {
+            Integer.parseInt(ul.getNik());
+            if (repo.findByNik(ul.getNik()) != null) { //(and the password is equal to the one in the provided database
+                return (new Document()).append("rc", "00").append("message", "login successful")
+                        .append("role", "admin")
+                        .append("menu", "home, troops, account")
+                        .append("data", (new Employee(repo.findByNik(ul.getNik()))));
+            } 
+            return (new Document()).append("rc", "12").append("message", "command undefined");
+        } catch (Exception e) {
             return (new Document()).append("rc", "11").append("message", "invalid request format");
         }
     }
@@ -77,7 +116,7 @@ public class refTroopsController {
 //        }
 //    }
 
-    @RequestMapping(value = "/", method = RequestMethod.POST)
+    @RequestMapping(value = "/user/user-info", method = RequestMethod.POST)
     public Document searchByNik(@Valid @RequestBody NikRequest nr) throws Exception {
         try {
             Integer.parseInt(nr.getNik());
