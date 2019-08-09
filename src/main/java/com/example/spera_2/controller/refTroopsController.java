@@ -88,7 +88,9 @@ public class refTroopsController {
                 return (new Document()).append("rc", "00").append("message", "success")
                         .append("role", "admin")
                         .append("menu", "home, troops, account")
-                        .append("data", list);
+                        .append("data", list)
+                        .append("auth token", Authentication)
+                        .append("built token", buildToken());
             } else {
                 return (new Document()).append("rc", "12").append("message", "command undefined");
             }
@@ -109,7 +111,8 @@ public class refTroopsController {
                         .append("role", "admin")
                         .append("menu", "home, troops, account")
                         .append("data", (new Employee(repo.findByNik(ul.getNik()))))
-                        .append("token", Authentication);
+                        .append("auth token", Authentication)
+                        .append("built token", buildToken());
             } 
             return (new Document()).append("rc", "12").append("message", "command undefined");
         } catch (NumberFormatException e) {
@@ -128,7 +131,9 @@ public class refTroopsController {
             } else {
                 return (new Document()).append("rc", "00").append("message", "success")
                         .append("data", (new Employee(
-                                repo.findByNik(nr.getNik()))));
+                                repo.findByNik(nr.getNik()))))
+                        .append("auth token", Authentication)
+                        .append("built token", buildToken());
             }
         } catch (NumberFormatException e) {
             return (new Document()).append("rc", "11").append("message", "invalid request format");
