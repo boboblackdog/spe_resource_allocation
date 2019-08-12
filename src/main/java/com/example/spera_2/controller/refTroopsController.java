@@ -16,6 +16,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import javax.validation.Valid;
@@ -36,6 +38,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class refTroopsController {
     
+    private static final String USERNAME = "root";
+    private static final String PASSWORD = "password";
+    private static final String CONN_STRING = "jdbc:mysql://localhost:3306/spera_portal?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC";
+    
     @Autowired
     private refTroopsRepository repo;
     
@@ -52,26 +58,45 @@ public class refTroopsController {
     }
     
     /*
-    for making sure the given data exists on login, verified by checking mysql tables
+    provoked when user exists, but there are no open sessions for that user
     */
-    public static void verify(String username, String password, String token) throws SQLException { 
-        Connection conn = DriverManager.getConnection("localhost:3306", "root", "password");
-        String sql = "SELECT * FROM user WHERE username=?, password=?";
-        PreparedStatement pstm = conn.prepareStatement(sql);
-        pstm.setString(1, username);
-        pstm.setString(2, password);
-        ResultSet rslt = pstm.executeQuery();
-        
-        if (rslt.getString("username") != null && rslt.getString("password") != null) {
-            /*
-            if token still valid, 
-                continue login session with given token
-            else 
-                create a new login session
-            */
-        } else {
-            //access denied
+    public static void insertIntoUserBearer() throws SQLException{
+        Connection connection = DriverManager.getConnection(CONN_STRING, USERNAME, PASSWORD);
+        Statement statement = connection.createStatement();
+        String sql = "INSERT INTO `user_bearer` (nik, )";
+    }
+    
+    /*
+    provoked to provide
+    */
+    public static boolean existsInUserTable(UserLogin ul) throws SQLException {
+        Connection connection = DriverManager.getConnection(CONN_STRING, USERNAME, PASSWORD);
+        Statement statement = connection.createStatement();
+        String sql = "SELECT * FROM user;";
+        ResultSet resultSet = statement.executeQuery(sql);
+        while (resultSet.next()) {
+            if (resultSet.getString("nik").equals(ul.getNik()) && resultSet.getString("password_hash").equals(ul.getPassword())) {
+                return true;
+            }
+        } return false;
+    }
+    
+    public static boolean sessionActive(UserLogin ul, String auth) throws SQLException {
+        Connection connection = DriverManager.getConnection(CONN_STRING, USERNAME, PASSWORD);
+        Statement statement = connection.createStatement();
+        String sql4 = "SELECT TIMESTAMPDIFF(MINUTE, datetime_created, NOW()) AS difference FROM user_bearer WHERE "
+                + "nik = " + ul.getNik() + " AND "
+                + "bearer_token = " + "'"+ auth + "'"
+                + ";";
+        ResultSet resultSet4 = statement.executeQuery(sql4);
+        while (resultSet4.next()) {
+            if (resultSet4.getInt("difference") < 30) {
+                return true;
+            } else {
+                return false;
+            }
         }
+        return false;
     }
     
     /*
@@ -104,19 +129,37 @@ public class refTroopsController {
     */
     @RequestMapping(value = "/user/login", method = RequestMethod.POST)
     public Document loginUser(@Valid @RequestBody UserLogin ul, @RequestHeader String Authentication) throws Exception {
+        
         try {
-            Integer.parseInt(ul.getNik());
-            if (repo.findByNik(ul.getNik()) != null) { //(and the password is equal to the one in the provided database TABLE USER AUTH KEY
-                return (new Document()).append("rc", "00").append("message", "login successful")
-                        .append("role", "admin")
-                        .append("menu", "home, troops, account")
-                        .append("data", (new Employee(repo.findByNik(ul.getNik()))))
-                        .append("auth token", Authentication)
-                        .append("built token", buildToken());
-            } 
-            return (new Document()).append("rc", "12").append("message", "command undefined");
-        } catch (NumberFormatException e) {
-            return (new Document()).append("rc", "11").append("message", "invalid request format");
+            if (existsInUserTable(ul)) {
+                if (sessionActive(ul, Authentication)) {
+                    return (new Document()).append("rc", "00").append("message", "login successful1")
+                            .append("role", "admin")
+                            .append("menu", "home, troops, account")
+                            .append("bearer token", Authentication)
+                            //.append("data", (new Employee(repo.findByNik(ul.getNik()))))
+                            ;
+                } else {
+                    String newToken = buildToken();
+                    
+                    return (new Document()).append("rc", "00").append("message", "login successful2")
+                            .append("role", "admin")
+                            .append("menu", "home, troops, account")
+                            .append("bearer token", newToken)
+                            //.append("data", (new Employee(repo.findByNik(ul.getNik()))))
+                            ;
+                }  
+            }
+            return new Document().append("rc", "10").append("message", "failed");
+            /*
+            if the user data exists in the user table
+                return successful login document
+            else
+                return failed login document
+            */
+            
+        } catch (Exception e) {
+            return (new Document().append("rc", "11").append("message", "invalid request format").append("errorMsg", e.getMessage()));
         }
     }
     /*
@@ -139,25 +182,5 @@ public class refTroopsController {
             return (new Document()).append("rc", "11").append("message", "invalid request format");
         } 
     }
-    
-    /*
-    IN DEVELOPMENT: 
-    JSON OBJECT DIRECT RETURN (to stop using Document Object)
-    */
-//    @RequestMapping(value = "/jsonobject", method = RequestMethod.POST)
-//    public String returnByNik(@Valid @RequestBody NikRequest nr) throws Exception {
-//        try {
-//            Integer.parseInt(nr.getNik());
-//            if (repo.findByNik(nr.getNik())==null) {
-//                return ((new JSONObject()).put("rc", "10").put("message", "JSON entry DNE")).toString();
-//            } else {
-//                return ((new JSONObject()).put("rc", "00").put("message", "success").put("data", 
-//                        (new Employee(repo.findByNik(nr.getNik()), false ))
-//                        )).toString();
-//            }
-//        } catch (Exception e) {
-//            return ((new JSONObject()).put("rc", "11").put("message", "JSON Incorrect format")).toString();
-//        }
-//    }
 
 }

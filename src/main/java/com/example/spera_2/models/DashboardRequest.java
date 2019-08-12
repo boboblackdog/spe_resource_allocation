@@ -9,24 +9,19 @@ package com.example.spera_2.models;
  *
  * @author rakhadjo
  */
-public class UserLogin {
+public class DashboardRequest {
     
-    private String nik;
-    private String password;
+    private String year;
     private String device_id;
     
-    public UserLogin() {}
-    public UserLogin(String nik, String password, String device_id) {
-        this.nik = nik;
-        this.password = password;
+    public DashboardRequest() {}
+    public DashboardRequest(String year, String device_id) {
+        this.year = year;
         this.device_id = device_id;
     }
     
-    public String getNik() { return nik; }
-    public void setNik(String nik) { this.nik = nik; }
-    
-    public String getPassword() { return password; }
-    public void setPassword(String password) { this.password = password; }
+    public String getYear() { return year; }
+    public void setYear(String year) { this.year = year; }
     
     public String getDeviceId() { return device_id; }
     public void setDeviceId(String device_id) { this.device_id = device_id; }
