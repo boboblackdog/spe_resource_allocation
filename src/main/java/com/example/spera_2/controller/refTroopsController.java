@@ -60,11 +60,11 @@ public class refTroopsController {
     /*
     provoked when user exists, but there are no open sessions for that user
     */
-    public static void insertIntoUserBearer() throws SQLException{
-        Connection connection = DriverManager.getConnection(CONN_STRING, USERNAME, PASSWORD);
-        Statement statement = connection.createStatement();
-        String sql = "INSERT INTO `user_bearer` (nik, )";
-    }
+//    public static void insertIntoUserBearer() throws SQLException{
+//        Connection connection = DriverManager.getConnection(CONN_STRING, USERNAME, PASSWORD);
+//        Statement statement = connection.createStatement();
+//        String sql = "INSERT INTO `user_bearer` (nik, )";
+//    }
     
     /*
     provoked to provide
