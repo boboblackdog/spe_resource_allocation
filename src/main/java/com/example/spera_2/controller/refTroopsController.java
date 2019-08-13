@@ -11,15 +11,7 @@ import com.example.spera_2.models.Employee;
 import com.example.spera_2.models.NikRequest;
 import com.example.spera_2.models.TroopRequest;
 import com.example.spera_2.models.UserLogin;
-import com.example.spera_2.models.refTroops;
 import com.example.spera_2.repositories.refTroopsRepository;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import javax.validation.Valid;
@@ -40,10 +32,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class refTroopsController {
     
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "password";
-    private static final String CONN_STRING = "jdbc:mysql://localhost:3306/spera_portal?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC";
-    
     @Autowired
     private refTroopsRepository repo;
     
@@ -60,66 +48,6 @@ public class refTroopsController {
     }
     
     /*
-    provoked when user exists, but there are no open sessions for that user
-    */
-    public static String insertIntoUserBearer(UserLogin ul, String newToken) throws SQLException{
-        Connection connection = DriverManager.getConnection(CONN_STRING, USERNAME, PASSWORD);
-        String sql = "INSERT INTO "
-                + "`user_bearer` "
-                + "(nik, bearer_token, device_id, datetime_created, datetime_expired)"
-                + "VALUES "
-                + "(?, ?, ?, NOW(), DATE_ADD(NOW(), INTERVAL 30 MINUTE));";
-        PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        preparedStatement.setString(1, ul.getNik());
-        preparedStatement.setString(2, newToken);
-        preparedStatement.setString(3, ul.getDeviceId());
-        preparedStatement.executeUpdate();
-        return "inserted";
-    }
-    
-    /*
-    provoked to check whether user with given credentials exist in the user table
-    */
-    public static boolean existsInUserTable(UserLogin ul) throws SQLException {
-        Connection connection = DriverManager.getConnection(CONN_STRING, USERNAME, PASSWORD);
-        Statement statement = connection.createStatement();
-        String sql = "SELECT * FROM user;";
-        ResultSet resultSet = statement.executeQuery(sql);
-        while (resultSet.next()) {
-            if (resultSet.getString("nik").equals(ul.getNik()) && resultSet.getString("password_hash").equals(ul.getPassword())) {
-                return true;
-            }
-        } return false;
-    }
-    
-    /*
-    provoked to check whether user has an active session in the table
-    */
-    public static boolean sessionActive(UserLogin ul, String auth) throws SQLException {
-        Connection connection = DriverManager.getConnection(CONN_STRING, USERNAME, PASSWORD);
-        Statement statement = connection.createStatement();
-//        String sql4 = "SELECT TIMESTAMPDIFF(MINUTE, datetime_created, NOW()) AS difference FROM user_bearer WHERE "
-//                + "nik = " + ul.getNik() + " AND "
-//                + "bearer_token = " + "'"+ auth + "'"
-//                + ";";
-        String sql = "SELECT TIMESTAMPDIFF(MINUTE, datetime_created, NOW()) AS difference FROM user_bearer WHERE "
-                + "nik = ? AND bearer_token = ?;";
-        PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        preparedStatement.setString(1, ul.getNik());
-        preparedStatement.setString(2, auth);
-//        ResultSet resultSet4 = statement.executeQuery(sql4);
-        ResultSet resultSet = preparedStatement.executeQuery();
-        while (resultSet.next()) {
-            if (resultSet.getInt("difference") < 30) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-        return false;
-    }
-    
-    /*
     method used to obtain all troop information
     */
     @RequestMapping(value = "/troops/list", method = RequestMethod.POST)
@@ -127,9 +55,9 @@ public class refTroopsController {
         try {
             if (tr.getTroops().equals("get-all")) {
                 List<Employee> list = new ArrayList<>();
-                for (refTroops ref : repo.findAll()) {
+                repo.findAll().forEach((ref) -> {
                     list.add(new Employee(ref));
-                }
+                });
                 return (new Document()).append("rc", "00").append("message", "success")
                         .append("role", "admin")
                         .append("menu", "home, troops, account")
@@ -151,9 +79,12 @@ public class refTroopsController {
     public Document loginUser(@Valid @RequestBody UserLogin ul, @RequestHeader String Authentication) throws Exception {
         
         try {
-            if (existsInUserTable(ul)) {
-                if (sessionActive(ul, Authentication)) {
-                    return (new Document()).append("rc", "00").append("message", "login successful1")
+            MySQLConnection obj = new MySQLConnection();
+            if (obj.existsInUserTable(ul)) {
+                if (obj.sessionActive(ul, Authentication)) {
+                    obj.extendLoginSession(ul, Authentication);
+                    obj.closeCurrentConnection();
+                    return (new Document()).append("rc", "00").append("message", "login successful, session extended")
                             .append("role", "admin")
                             .append("menu", "home, troops, account")
                             .append("bearer token", Authentication)
@@ -161,25 +92,19 @@ public class refTroopsController {
                             ;
                 } else {
                     String newToken = buildToken();
-                    String res = insertIntoUserBearer(ul, newToken);
-                    return (new Document()).append("rc", "00").append("message", "login successful2")
+                    obj.insertIntoUserBearer(ul, newToken);
+                    obj.closeCurrentConnection();
+                    return (new Document()).append("rc", "00").append("message", "login successful, new session started")
                             .append("role", "admin")
                             .append("menu", "home, troops, account")
                             .append("bearer token", newToken)
                             .append("data", (new Employee(repo.findByNik(ul.getNik()))))
-                            .append("insert result", res)
                             ;
                 }  
             } else {
+                obj.closeCurrentConnection();
                 return new Document().append("rc", "10").append("message", "DNE in `users`");
-            }
-            /*
-            if the user data exists in the user table
-                return successful login document
-            else
-                return failed login document
-            */
-            
+            } 
         } catch (Exception e) {
             return (new Document()).append("rc", "11").append("message", "invalid request format")
                     .append("errorMsg", e.getMessage())
@@ -207,6 +132,9 @@ public class refTroopsController {
         } 
     }
     
+    /*
+    method used to obtain basic dashboard data, future details TBD
+    */
     @RequestMapping(value = "/dashboard", method = RequestMethod.POST)
     public Document getDashboard(@Valid @RequestBody DashboardRequest dr) { //@RequestHeader String Authentication
         /*
