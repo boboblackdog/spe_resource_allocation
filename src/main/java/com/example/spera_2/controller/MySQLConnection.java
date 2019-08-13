@@ -35,6 +35,7 @@ public class MySQLConnection {
     
     /*
     provoked to check whether user with given credentials exist in the user table
+    PASSWORD PASSED TO BE HASHED WITH LATER LIBRARY
     */
     public boolean existsInUserTable(UserLogin ul) throws SQLException {
         String sql = "SELECT * FROM user;";
