@@ -1,7 +1,5 @@
 com/example/spera_2/models/Employee.class
 com/example/spera_2/models/refTroops.class
-com/example/spera_2/models/user.class
-com/example/spera_2/controller/MySQLConnection.class
 com/example/spera_2/models/NikRequest.class
 com/example/spera_2/models/UserLogin.class
 com/example/spera_2/models/dashboard_response/Turnover.class
@@ -14,6 +12,7 @@ com/example/spera_2/more_models/refPositions.class
 com/example/spera_2/models/DashboardRequest.class
 com/example/spera_2/models/TroopRequest.class
 com/example/spera_2/Spera2Application.class
+com/example/spera_2/models/User.class
 com/example/spera_2/repositories/refTroopsRepository.class
 com/example/spera_2/models/dashboard_response/Position.class
 com/example/spera_2/more_models/refGrades.class

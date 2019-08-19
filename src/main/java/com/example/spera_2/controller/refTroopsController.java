@@ -30,16 +30,28 @@ import org.springframework.web.bind.annotation.RestController;
 public class refTroopsController {
     
     @Autowired
-    private refTroopsRepository repo;
+    private refTroopsRepository refTroopsRepo;
     
     private final RealController real = new RealController();
+    
+    
+//    @RequestMapping(value = "/", method = RequestMethod.GET)
+//    public String index() {
+//        Logger log = LoggerFactory.getLogger(Spera2Application.class);
+//        log.trace("TRACE message");
+//        log.debug("DEBUG message");
+//        log.info("INFO message");
+//        log.warn("WARN message");
+//        log.error("ERROR message");
+//        return "check logs to see output";
+//    }
     
     /*
     basic api homepage, just shows a welcome page. 
     interactable links can be added if needed
     */
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public ResponseEntity<Document> welcome() {
+    public ResponseEntity<Document> welcome() throws Exception {
 
         return real.welcome();
         
@@ -51,7 +63,7 @@ public class refTroopsController {
     @RequestMapping(value = "/troops/list", method = RequestMethod.POST)
     public ResponseEntity<Document> getAllTroops(@Valid @RequestBody TroopRequest tr, @RequestHeader String Authentication) throws Exception {
         
-        return real.getAllTroops(tr, Authentication, repo.findAll());
+        return real.getAllTroops(tr, Authentication, refTroopsRepo.findAll());
         
     }
     
@@ -61,7 +73,7 @@ public class refTroopsController {
     @RequestMapping(value = "/user/login", method = RequestMethod.POST)
     public ResponseEntity<Document> loginUser(@Valid @RequestBody UserLogin ul, @RequestHeader String Authentication) throws Exception {
         
-        return real.loginUser(ul, Authentication, repo.findByNik(ul.getNik()));
+        return real.loginUser(ul, Authentication, refTroopsRepo.findByNik(ul.getNik()));
         
     }
     /*
@@ -70,7 +82,7 @@ public class refTroopsController {
     @RequestMapping(value = "/user/profile", method = RequestMethod.POST)
     public ResponseEntity<Document> getUserProfile(@Valid @RequestBody NikRequest nr, @RequestHeader String Authentication) throws Exception {
         
-        return real.getUserProfile(nr, Authentication, new Employee(repo.findByNik(nr.getNik())));
+        return real.getUserProfile(nr, Authentication, new Employee(refTroopsRepo.findByNik(nr.getNik())));
         
     }
     
@@ -83,5 +95,4 @@ public class refTroopsController {
         return real.getDashboard(dr);
         
     }
-
 }

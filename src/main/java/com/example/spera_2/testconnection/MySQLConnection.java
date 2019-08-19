@@ -3,15 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.example.spera_2.controller;
+package com.example.spera_2.testconnection;
 
 import com.example.spera_2.models.UserLogin;
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 /**
  *
@@ -19,17 +26,38 @@ import java.sql.Statement;
  */
 public class MySQLConnection {
     
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "password";
-    
+    private static String USERNAME;
+    private static String PASSWORD;
+    private static String HOST_PORT;
     //change this to the actual server later on
-    private static final String CONN_STRING = "jdbc:mysql://localhost:3306/spera_portal?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC";
+    private static String SERVER; // = "jdbc:mysql://" + HOST_PORT;
+    private static final String SETTINGS = "/spera_portal?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC";
+    private static String CONN_STRING; // = SERVER + SETTINGS;
     
     private Connection conn;
     
     public MySQLConnection() throws SQLException {
         
-        this.conn = DriverManager.getConnection(CONN_STRING, USERNAME, PASSWORD);
+        try {
+            File XML = new File("dbconfig.xml");
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            DocumentBuilder db = dbf.newDocumentBuilder();
+            Document d = db.parse(XML);
+            NodeList list = d.getElementsByTagName("dbconfig");
+            for (int i = 0; i < list.getLength(); i++) {
+            Node n = list.item(i);
+                if (n.getNodeType() == Node.ELEMENT_NODE) {
+                    Element el = (Element) n;
+                    this.USERNAME = el.getElementsByTagName("db_username").item(0).getTextContent();
+                    this.PASSWORD = el.getElementsByTagName("db_password").item(0).getTextContent();
+                    this.HOST_PORT = el.getElementsByTagName("db_host").item(0).getTextContent() + ":" + el.getElementsByTagName("db_port").item(0).getTextContent();
+                    this.SERVER = "jdbc:mysql://" + this.HOST_PORT;
+                    this.CONN_STRING = this.SERVER + this.SETTINGS;
+                }
+            }
+            this.conn = DriverManager.getConnection(this.CONN_STRING, this.USERNAME, this.PASSWORD);
+        } 
+        catch (Exception e) {}
         
     }
     
@@ -102,6 +130,19 @@ public class MySQLConnection {
     public void closeCurrentConnection() throws SQLException {
         
         this.conn.close();
+        
+    }
+    
+    public boolean testDBConnection() throws SQLException {
+        String sql = "SELECT * FROM `user`;";
+        Statement stmt = conn.createStatement();
+        ResultSet rslt = stmt.executeQuery(sql);
+        while (rslt.next()) {
+            return !rslt.equals("null");
+        } return false;
+    }
+    
+    public void readXML() {
         
     }
     

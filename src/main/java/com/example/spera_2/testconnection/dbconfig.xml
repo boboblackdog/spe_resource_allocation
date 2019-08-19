@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<dbconfig>
+	<db_host>localhost</db_host>
+	<db_port>3306</db_port>
+	<db_name>spera_portal</db_name>
+	<db_username>root</db_username>
+	<db_password>password</db_password>
+</dbconfig>

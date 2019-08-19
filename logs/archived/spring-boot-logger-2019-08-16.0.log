@@ -1,0 +1,23 @@
+2019-08-16 17:11:21,869 INFO org.springframework.boot.StartupInfoLogger [main] Starting Spera2Application on red.local with PID 24570 (/Users/rakhadjo/NetBeansProjects/spera2/target/classes started by rakhadjo in /Users/rakhadjo/NetBeansProjects/spera2)
+2019-08-16 17:11:21,872 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-08-16 17:11:22,983 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-16 17:11:23,074 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 83ms. Found 2 repository interfaces.
+2019-08-16 17:11:23,636 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$b69f0c68] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-16 17:11:24,127 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 7502 (http)
+2019-08-16 17:11:24,152 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-7502"]
+2019-08-16 17:11:24,171 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2019-08-16 17:11:24,175 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-16 17:11:24,320 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2019-08-16 17:11:24,320 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2377 ms
+2019-08-16 17:11:24,965 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-16 17:11:24,966 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Adding discovered server localhost:27017 to client view of cluster
+2019-08-16 17:11:25,060 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d56814cc59f875ffad82aec', description='null'}-localhost:27017] Opened connection [connectionId{localValue:1, serverValue:6845}] to localhost:27017
+2019-08-16 17:11:25,071 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d56814cc59f875ffad82aec', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=5402543}
+2019-08-16 17:11:25,073 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d56814cc59f875ffad82aec', description='null'}-localhost:27017] Discovered cluster type of STANDALONE
+2019-08-16 17:11:26,329 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-16 17:11:26,801 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-7502"]
+2019-08-16 17:11:26,854 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 7502 (http) with context path ''
+2019-08-16 17:11:26,859 INFO org.springframework.boot.StartupInfoLogger [main] Started Spera2Application in 5.753 seconds (JVM running for 13.209)
+2019-08-16 17:11:42,783 INFO org.apache.juli.logging.DirectJDKLog [http-nio-7502-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-16 17:11:42,784 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-7502-exec-1] Initializing Servlet 'dispatcherServlet'
+2019-08-16 17:11:42,878 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-7502-exec-1] Completed initialization in 93 ms

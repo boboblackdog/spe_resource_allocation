@@ -5,6 +5,7 @@
  */
 package com.example.spera_2.controller;
 
+import com.example.spera_2.testconnection.MySQLConnection;
 import com.example.spera_2.models.DashboardRequest;
 import com.example.spera_2.models.DashboardResponse;
 import com.example.spera_2.models.Employee;
@@ -14,12 +15,9 @@ import com.example.spera_2.models.UserLogin;
 import com.example.spera_2.models.refTroops;
 import java.util.ArrayList;
 import java.util.List;
-import javax.validation.Valid;
 import org.bson.Document;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
 
 /**
  *
@@ -100,23 +98,36 @@ public class RealController {
     /*
     basic welcome page
     */
-    public ResponseEntity<Document> welcome() {
+    public ResponseEntity<Document> welcome() throws Exception {
         List<String> list = new ArrayList<>();
         list.add("/troops/list");
         list.add("/user/login");
         list.add("/user/profile");
         list.add("/dashboard");
-        Document body = new Document().append("rc", "00").append("message", "welcome to SPERA!")
-                .append("links", list);
         HttpHeaders header = new HttpHeaders();
         header.add("x-trace-id", "TBD");
-        return ResponseEntity.accepted().headers(header).body(body);
+        try {
+            Document body = new Document().append("rc", "00").append("message", "welcome to SPERA!")
+                .append("links", list)
+//                .append("result", storeLogFiles())
+                ;
+            return ResponseEntity.accepted().headers(header).body(body);
+        } catch (Exception e) {
+            return ResponseEntity.accepted().headers(header).body(
+                    new Document()
+                            .append("rc", "00")
+                            .append("message", e.getMessage())
+            );
+        }
+        
     }
     
     /*
     user login support
+    @RequestHeader String Authentication
+    @Valid @RequestBody UserLogin ul
     */
-    public ResponseEntity<Document> loginUser(@Valid @RequestBody UserLogin ul, @RequestHeader String Authentication, refTroops ref) throws Exception {
+    public ResponseEntity<Document> loginUser(UserLogin ul, String Authentication, refTroops ref) throws Exception {
         HttpHeaders header = new HttpHeaders();
         header.add("x-trace-id", "TBD");
         try {
@@ -152,8 +163,11 @@ public class RealController {
         } catch (Exception e) {
             return ResponseEntity.accepted().headers(header).body
                     (new Document().append("rc", "11").append("message", "invalid request format")
-                    .append("errorMsg", e.getMessage())
-                    .append("data login", ul));
+                            .append("errorMsg", e.getMessage())
+                            .append("data login", ul)
+                            .append("stacktrace", e.getStackTrace())
+                    )
+                    ;
         }
     }
     
@@ -166,7 +180,7 @@ public class RealController {
     for building random 32 digit alphanumeric token
     */
     private static final String set = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnopqrstuv";
-    public static String buildToken() {
+    private static String buildToken() {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < 32; i++) {
             int charPosition = (int)(Math.random()*set.length());

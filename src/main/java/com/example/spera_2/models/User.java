@@ -15,7 +15,7 @@ import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "user")
-public class user {
+public class User {
     @Id
     @GeneratedValue
     private Integer id;
@@ -36,8 +36,8 @@ public class user {
     @NotBlank
     private int updated_at;
     
-    public user() {}
-    public user(Integer id, String nik, String auth_key, String password_hash, String password_reset_token, String email, int status, int created_at, int updated_at) {
+    public User() {}
+    public User(Integer id, String nik, String auth_key, String password_hash, String password_reset_token, String email, int status, int created_at, int updated_at) {
         this.id = id;
         this.nik = nik;
         this.auth_key = auth_key;
@@ -58,8 +58,8 @@ public class user {
     public String getAuthKey() {return auth_key; }
     public void setAuthKey(String auth_key) { this.auth_key = auth_key; }
     
-    public String getHashPw() { return password_hash; }
-    public void setHashPw(String password_hash) { this.password_hash = password_hash; }
+    public String getPwHash() { return password_hash; }
+    public void setPwHash(String password_hash) { this.password_hash = password_hash; }
     
     public String getPwResetToken() { return password_reset_token; }
     public void setPwResetToken(String password_reset_token) { this.password_reset_token = password_reset_token; }
