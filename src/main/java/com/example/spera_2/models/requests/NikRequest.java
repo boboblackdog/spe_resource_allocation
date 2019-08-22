@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.example.spera_2.models;
+package com.example.spera_2.models.requests;
+
+import org.bson.Document;
 
 /**
  *
@@ -24,5 +26,12 @@ public class NikRequest {
     public NikRequest(String nik, String device_id) {
         this.nik = nik;
         this.device_id = device_id;
+    }
+    
+    public Document toDocument() {
+        return new Document()
+                .append("nik", nik)
+                .append("device_id", device_id)
+                ;
     }
 }

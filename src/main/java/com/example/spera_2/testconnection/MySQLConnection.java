@@ -5,6 +5,7 @@
  */
 package com.example.spera_2.testconnection;
 
+import com.example.spera_2.Spera2Application;
 import com.example.spera_2.models.UserLogin;
 import java.io.File;
 import java.sql.Connection;
@@ -15,6 +16,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -26,6 +29,8 @@ import org.w3c.dom.NodeList;
  */
 public class MySQLConnection {
     
+    private static Logger logger = LoggerFactory.getLogger(Spera2Application.class);
+    
     private static String USERNAME;
     private static String PASSWORD;
     private static String HOST_PORT;
@@ -36,10 +41,15 @@ public class MySQLConnection {
     
     private Connection conn;
     
+    public boolean configFileExists() {
+        return new File("mysql_config.xml").exists();
+    }
+    
     public MySQLConnection() throws SQLException {
         
         try {
-            File XML = new File("dbconfig.xml");
+            logger.info("reading configuration settings...");
+            File XML = new File("mysql_config.xml");
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder();
             Document d = db.parse(XML);
@@ -56,8 +66,12 @@ public class MySQLConnection {
                 }
             }
             this.conn = DriverManager.getConnection(this.CONN_STRING, this.USERNAME, this.PASSWORD);
+            logger.info("...read complete, MySQL instance set");
         } 
-        catch (Exception e) {}
+        catch (Exception e) {
+            logger.error(e.toString());
+            logger.error("errorMsg: " + e.getMessage());
+        }
         
     }
     
@@ -66,11 +80,11 @@ public class MySQLConnection {
     PASSWORD PASSED TO BE HASHED WITH LATER LIBRARY
     */
     public boolean existsInUserTable(UserLogin ul) throws SQLException {
-        String sql = "SELECT * FROM user;";
+        String sql = "SELECT * FROM `user`;";
         Statement stmt = conn.createStatement();
         ResultSet rslt = stmt.executeQuery(sql);
         while (rslt.next()) {
-            if (rslt.getString("nik").equals(ul.getNik()) && rslt.getString("password_hash").equals(ul.getPassword())) {
+            if (rslt.getString("username").equals(ul.getUsername()) && rslt.getString("password_hash").equals(ul.getPassword())) {
                 return true;
             }
         } return false;
@@ -80,10 +94,10 @@ public class MySQLConnection {
     provoked to check whether user has an active session in the table
     */
     public boolean sessionActive(UserLogin ul, String auth) throws SQLException {
-        String sql = "SELECT TIMESTAMPDIFF(MINUTE, datetime_created, NOW()) AS difference FROM user_bearer WHERE "
+        String sql = "SELECT TIMESTAMPDIFF(MINUTE, datetime_created, NOW()) AS difference FROM `user_bearer` WHERE "
                 + "nik = ? AND bearer_token = ?;";
         PreparedStatement pstm = conn.prepareStatement(sql);
-        pstm.setString(1, ul.getNik());
+        pstm.setString(1, ul.getUsername());
         pstm.setString(2, auth);
         ResultSet rslt = pstm.executeQuery();
         while (rslt.next()) {
@@ -103,7 +117,7 @@ public class MySQLConnection {
                 + "VALUES "
                 + "(?, ?, ?, NOW(), DATE_ADD(NOW(), INTERVAL 30 MINUTE));";
         PreparedStatement pstm = conn.prepareStatement(sql);
-        pstm.setString(1, ul.getNik());
+        pstm.setString(1, ul.getUsername());
         pstm.setString(2, newToken);
         pstm.setString(3, ul.getDeviceId());
         pstm.executeUpdate();
@@ -119,7 +133,7 @@ public class MySQLConnection {
                 + "WHERE "
                 + "nik = ? AND bearer_token = ?;";
         PreparedStatement pstm = conn.prepareStatement(sql);
-        pstm.setString(1, ul.getNik());
+        pstm.setString(1, ul.getUsername());
         pstm.setString(2, auth);
         pstm.executeUpdate();
     }
@@ -140,10 +154,6 @@ public class MySQLConnection {
         while (rslt.next()) {
             return !rslt.equals("null");
         } return false;
-    }
-    
-    public void readXML() {
-        
     }
     
 }

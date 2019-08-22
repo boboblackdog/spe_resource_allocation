@@ -5,6 +5,8 @@
  */
 package com.example.spera_2.models.dashboard_response;
 
+import org.bson.Document;
+
 /**
  *
  * @author rakhadjo
@@ -25,6 +27,23 @@ public class Turnover {
     private String dec;
     
     public Turnover() {}
+
+    public Document toDocument() {
+        return new Document()
+                .append("jan", jan)
+                .append("feb", feb)
+                .append("mar", mar)
+                .append("apr", apr)
+                .append("may", may)
+                .append("jun", jun)
+                .append("jul", jul)
+                .append("aug", aug)
+                .append("sep", sep)
+                .append("oct", oct)
+                .append("nov", nov)
+                .append("dec", dec)
+                ;
+    }
     
     
 }

@@ -14,14 +14,22 @@ import org.bson.Document;
  */
 public class TestConnection {
     
-    private final MySQLConnection cc;
-    private final MongoCompassConnection mc;
+    private static MySQLConnection cc;
+    private static MongoCompassConnection mc;
     
     public TestConnection() throws SQLException {
         
         cc = new MySQLConnection();
         mc = new MongoCompassConnection();
         
+    }
+    
+    public boolean ccExists() {
+        return cc.configFileExists();
+    }
+    
+    public boolean mcExists() {
+        return mc.configFileExists();
     }
     
     public Document test() throws SQLException {

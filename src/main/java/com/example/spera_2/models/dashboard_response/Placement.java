@@ -5,6 +5,8 @@
  */
 package com.example.spera_2.models.dashboard_response;
 
+import org.bson.Document;
+
 /**
  *
  * @author rakhadjo
@@ -30,4 +32,12 @@ public class Placement {
     
     public String getInternship() { return internship; }
     public void setInternship(String internship) { this.internship = internship; }
+
+    public Document toDocument() {
+        return new Document()
+                .append("jakarta", jakarta)
+                .append("yogyakarta", yogyakarta)
+                .append("internship", internship)
+                ;
+    }
 }

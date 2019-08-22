@@ -5,12 +5,17 @@
  */
 package com.example.spera_2.controller;
 
-import com.example.spera_2.models.DashboardRequest;
+import com.example.spera_2.models.requests.DashboardRequest;
 import com.example.spera_2.models.Employee;
-import com.example.spera_2.models.NikRequest;
-import com.example.spera_2.models.TroopRequest;
+import com.example.spera_2.models.requests.NikRequest;
 import com.example.spera_2.models.UserLogin;
+import com.example.spera_2.models.refTroops;
+import com.example.spera_2.repositories.refGradesRepository;
+import com.example.spera_2.repositories.refPositionsRepository;
 import com.example.spera_2.repositories.refTroopsRepository;
+import java.sql.Timestamp;
+import java.util.Date;
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,21 +35,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class refTroopsController {
     
     @Autowired
-    private refTroopsRepository refTroopsRepo;
+    public refTroopsRepository refTroopsRepo;
+   
+    @Autowired
+    private refPositionsRepository refPositionsRepo;
+    
+    @Autowired
+    private refGradesRepository refGradesRepo;
     
     private final RealController real = new RealController();
     
-    
-//    @RequestMapping(value = "/", method = RequestMethod.GET)
-//    public String index() {
-//        Logger log = LoggerFactory.getLogger(Spera2Application.class);
-//        log.trace("TRACE message");
-//        log.debug("DEBUG message");
-//        log.info("INFO message");
-//        log.warn("WARN message");
-//        log.error("ERROR message");
-//        return "check logs to see output";
-//    }
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    public Document test() {
+        return real.testConnection();
+    }
     
     /*
     basic api homepage, just shows a welcome page. 
@@ -61,9 +65,9 @@ public class refTroopsController {
     method used to obtain all troop information
     */
     @RequestMapping(value = "/troops/list", method = RequestMethod.POST)
-    public ResponseEntity<Document> getAllTroops(@Valid @RequestBody TroopRequest tr, @RequestHeader String Authentication) throws Exception {
+    public ResponseEntity<Document> getAllTroops(@Valid @RequestBody Document tr, @RequestHeader String Authentication, HttpServletRequest request) throws Exception {
         
-        return real.getAllTroops(tr, Authentication, refTroopsRepo.findAll());
+        return real.getAllTroops(tr, Authentication, refTroopsRepo.findAll(), request);
         
     }
     
@@ -71,18 +75,18 @@ public class refTroopsController {
     method to be used (later on after development) in conjunction with EXISTS..., INSERTINTOUSERBEARER and BUILDTOKEN methods (all defined above)
     */
     @RequestMapping(value = "/user/login", method = RequestMethod.POST)
-    public ResponseEntity<Document> loginUser(@Valid @RequestBody UserLogin ul, @RequestHeader String Authentication) throws Exception {
+    public ResponseEntity<Document> loginUser(@Valid @RequestBody UserLogin ul, @RequestHeader String Authentication, HttpServletRequest request) throws Exception {
         
-        return real.loginUser(ul, Authentication, refTroopsRepo.findByNik(ul.getNik()));
+        return real.loginUser(ul, Authentication, refTroopsRepo.findByNik(ul.getUsername()), request);
         
     }
     /*
     method used to obtain logged in user's information
     */
     @RequestMapping(value = "/user/profile", method = RequestMethod.POST)
-    public ResponseEntity<Document> getUserProfile(@Valid @RequestBody NikRequest nr, @RequestHeader String Authentication) throws Exception {
+    public ResponseEntity<Document> getUserProfile(@Valid @RequestBody NikRequest nr, @RequestHeader String Authentication, HttpServletRequest request) throws Exception {
         
-        return real.getUserProfile(nr, Authentication, new Employee(refTroopsRepo.findByNik(nr.getNik())));
+        return real.getUserProfile(nr, Authentication, new Employee(refTroopsRepo.findByNik(nr.getNik())), request);
         
     }
     
@@ -90,9 +94,42 @@ public class refTroopsController {
     method used to obtain basic dashboard data, future details TBD
     */
     @RequestMapping(value = "/dashboard", method = RequestMethod.POST)
-    public ResponseEntity<Document> getDashboard(@Valid @RequestBody DashboardRequest dr) { //@RequestHeader String Authentication
+    public ResponseEntity<Document> getDashboard(@Valid @RequestBody DashboardRequest dr, HttpServletRequest request) { //@RequestHeader String Authentication
 
-        return real.getDashboard(dr);
+        return real.getDashboard(dr, request);
+        
+    }
+    
+    /*
+    method used to get positions from db
+    */
+    @RequestMapping(value = "/troops/positions", method = RequestMethod.GET)
+    public ResponseEntity<Document> getPositions(String Authentication, HttpServletRequest request) {
+        
+        return real.getPositions(Authentication, refPositionsRepo.findAll() , request);
+        
+    }
+    
+    /*
+    method used to get grades from db
+    */
+    @RequestMapping(value = "/troops/grades", method = RequestMethod.GET)
+    public ResponseEntity<Document> getGrades(String Authentication, HttpServletRequest request) {
+        
+        return real.getGrades(Authentication, refGradesRepo.findAll(), request);
+        
+    }
+    
+    /*
+    method used to insert new troop
+    */
+    @RequestMapping(value = "/troops/add", method = RequestMethod.POST)
+    public ResponseEntity<Document> insertTroops(String Authentication, @Valid @RequestBody Document ref, HttpServletRequest request) {
+        
+        if (!new refTroops(ref).containsNull()) {
+            refTroopsRepo.save(new refTroops(ref.append("datetime_inserted", new Timestamp(new Date().getTime()))));
+        }
+        return real.insertTroops(Authentication, ref, request, new refTroops(ref).containsNull());
         
     }
 }

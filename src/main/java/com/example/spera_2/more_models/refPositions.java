@@ -5,6 +5,7 @@
  */
 package com.example.spera_2.more_models;
 
+import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 
@@ -34,4 +35,10 @@ public class refPositions {
     
     public ObjectId get_id() { return _id; }
     public void set_id(ObjectId _id) { this._id = _id; } 
+    
+    public Document toDocument() {
+        return new Document()
+                .append("position_id", position_id)
+                .append("position_name", position_name);
+    }
 }

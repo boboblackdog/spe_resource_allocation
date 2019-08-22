@@ -5,14 +5,13 @@
  */
 package com.example.spera_2.repositories;
 
-import com.example.spera_2.models.refTroops;
+import com.example.spera_2.more_models.refGrades;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.data.repository.query.Param;
 
 /**
  *
  * @author rakhadjo
  */
-public interface refTroopsRepository extends MongoRepository<refTroops, String> {
-    refTroops findByNik(@Param("nik") String nik);
+public interface refGradesRepository extends MongoRepository<refGrades, String>{
+    
 }

@@ -5,6 +5,7 @@
  */
 package com.example.spera_2.more_models;
 
+import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 
@@ -37,5 +38,12 @@ public class refGrades {
         this.grade_id = grade_id;
         this.grade_romawi = grade_romawi;
         this.grade_name = grade_name;
+    }
+    
+    public Document toDocument() {
+        return new Document()
+                .append("grade_id", grade_id)
+                .append("grade_romawi", grade_romawi)
+                .append("grade_name", grade_name);
     }
 }

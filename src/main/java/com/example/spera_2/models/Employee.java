@@ -5,6 +5,7 @@
  */
 package com.example.spera_2.models;
 
+import com.example.spera_2.testconnection.MongoCompassConnection;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -43,17 +44,38 @@ public class Employee {
         this.email = ref.getEmail();
         this.phone = ref.getMobile();
         
-        MongoClient client = new MongoClient("localhost", 27017);
-        MongoDatabase database = client.getDatabase("spera");
-        
-        MongoCollection<Document> refStatusColl = database.getCollection("refStatus");
-        MongoCollection<Document> refGradesColl = database.getCollection("refGrades");
-        MongoCollection<Document> refPositionsColl = database.getCollection("refPositions");
+        MongoCompassConnection mcc = new MongoCompassConnection();
+        MongoCollection<Document> refStatusColl = mcc.getColl("refStatus");
+        MongoCollection<Document> refGradesColl = mcc.getColl("refGrades");
+        MongoCollection<Document> refPositionsColl = mcc.getColl("refPositions");
         
         try {
             String finalStatus = refStatusColl.find(eq("status", ref.getStat())).first().getString("status_name");
             String finalGrade = refGradesColl.find(eq("grade_id", ref.getGradeId())).first().getString("grade_name");
             String finalPosition = refPositionsColl.find(eq("position_id", ref.getPosId())).first().getString("position_name");
+            this.status = finalStatus;
+            this.grade = finalGrade;
+            this.position = finalPosition;
+        } catch (Exception e) {
+            this.status = this.grade = this.position = "null";
+        }
+    }
+    
+    public Employee (Document refTroopsDocument) {
+        this.nik = refTroopsDocument.getString("nik");
+        this.fullname = refTroopsDocument.getString("fullname");
+        this.email = refTroopsDocument.getString("email");
+        this.phone = refTroopsDocument.getString("mobile_docotel");
+        
+        MongoCompassConnection mcc = new MongoCompassConnection();
+        MongoCollection<Document> refStatusColl = mcc.getColl("refStatus");
+        MongoCollection<Document> refGradesColl = mcc.getColl("refGrades");
+        MongoCollection<Document> refPositionsColl = mcc.getColl("refPositions");
+        
+        try {
+            String finalStatus = refStatusColl.find(eq("status", refTroopsDocument.getString("status"))).first().getString("status_name");
+            String finalGrade = refGradesColl.find(eq("grade_id", refTroopsDocument.getString("grade_id"))).first().getString("grade_name");
+            String finalPosition = refPositionsColl.find(eq("position_id", refTroopsDocument.getString("position_id"))).first().getString("grade_name");
             this.status = finalStatus;
             this.grade = finalGrade;
             this.position = finalPosition;
@@ -82,4 +104,16 @@ public class Employee {
 
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
+
+    public Document toDocument() {
+        return new Document()
+                .append("nik", nik)
+                .append("fullname", fullname)
+                .append("email", email)
+                .append("phone", phone)
+                .append("position", position)
+                .append("grade", grade)
+                .append("status", status)
+                ;
+    }
 }

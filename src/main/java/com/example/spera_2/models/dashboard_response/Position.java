@@ -5,6 +5,8 @@
  */
 package com.example.spera_2.models.dashboard_response;
 
+import org.bson.Document;
+
 /**
  *
  * @author rakhadjo
@@ -29,4 +31,13 @@ public class Position {
     
     public String getSA() { return systems_analyst; }
     public void setSA(String systems_analyst) { this.systems_analyst = systems_analyst; }
+
+    public Document toDocument() {
+        return new Document()
+                .append("software_engineer", software_engineer)
+                .append("android_mobile_dev", android_mobile_dev)
+                .append("ios_mobile_dev", ios_mobile_dev)
+                .append("systems_analyst", systems_analyst)
+                ;
+    }
 }

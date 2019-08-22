@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.example.spera_2.models;
+package com.example.spera_2.models.requests;
+
+import org.bson.Document;
 
 /**
  *
@@ -11,11 +13,13 @@ package com.example.spera_2.models;
  */
 public class DashboardRequest {
     
+    private String nik_requestor;
     private String year;
     private String device_id;
     
     public DashboardRequest() {}
-    public DashboardRequest(String year, String device_id) {
+    public DashboardRequest(String nik_requestor, String device_id, String year) {
+        this.nik_requestor = nik_requestor;
         this.year = year;
         this.device_id = device_id;
     }
@@ -25,4 +29,15 @@ public class DashboardRequest {
     
     public String getDeviceId() { return device_id; }
     public void setDeviceId(String device_id) { this.device_id = device_id; }
+    
+    public String getNikRequestor() { return nik_requestor; }
+    public void setNikRequestor(String nik_requestor) { this.nik_requestor = nik_requestor; }
+    
+    public Document toDocument() {
+        return new Document()
+                .append("nik_requestor", nik_requestor)
+                .append("year", year)
+                .append("device_id", device_id)
+                ;
+    }
 }
