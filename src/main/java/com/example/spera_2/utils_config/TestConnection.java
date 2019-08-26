@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.example.spera_2.testconnection;
+package com.example.spera_2.utils_config;
 
 import java.sql.SQLException;
 import org.bson.Document;

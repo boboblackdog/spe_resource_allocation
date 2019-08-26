@@ -5,10 +5,8 @@
  */
 package com.example.spera_2.models;
 
-import com.example.spera_2.testconnection.MongoCompassConnection;
-import com.mongodb.MongoClient;
+import com.example.spera_2.utils_config.MongoCompassConnection;
 import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
 import static com.mongodb.client.model.Filters.eq;
 import org.bson.Document;
 
@@ -27,6 +25,31 @@ public class Employee {
     private String status;
 
     public Employee() {}
+    
+    public Employee(String nik) {
+        this.nik = nik;
+        
+        MongoCompassConnection mcc = new MongoCompassConnection();
+        Document refTroopsDocument = mcc.manualNikSearch(nik);
+        this.fullname = refTroopsDocument.getString("fullname");
+        this.email = refTroopsDocument.getString("email_docotel");
+        this.phone = refTroopsDocument.getString("mobile_phone");
+        
+        MongoCollection<Document> refStatusColl = mcc.getColl("refStatus");
+        MongoCollection<Document> refGradesColl = mcc.getColl("refGrades");
+        MongoCollection<Document> refPositionsColl = mcc.getColl("refPositions");
+        try {
+            String finalStatus = refStatusColl.find(eq("status", refTroopsDocument.getString("status"))).first().getString("status_name");
+            String finalGrade = refGradesColl.find(eq("grade_id", refTroopsDocument.getString("grade_id"))).first().getString("grade_name");
+            String finalPosition = refPositionsColl.find(eq("position_id", refTroopsDocument.getString("position_id"))).first().getString("position_name");
+            this.status = finalStatus;
+            this.grade = finalGrade;
+            this.position = finalPosition;
+        } catch (Exception e) {
+            this.status = this.grade = this.position = "null";
+        }
+        
+    }
 
     public Employee(String nik, String fullname, String email, String phone, String position, String grade, String status) {
         this.nik = nik;
@@ -40,9 +63,9 @@ public class Employee {
 
     public Employee(refTroops ref) {
         this.nik = ref.getNik();
-        this.fullname = ref.getName();
-        this.email = ref.getEmail();
-        this.phone = ref.getMobile();
+        this.fullname = ref.getFullname();
+        this.email = ref.getEmail_docotel();
+        this.phone = ref.getMobile_phone();
         
         MongoCompassConnection mcc = new MongoCompassConnection();
         MongoCollection<Document> refStatusColl = mcc.getColl("refStatus");
@@ -50,9 +73,9 @@ public class Employee {
         MongoCollection<Document> refPositionsColl = mcc.getColl("refPositions");
         
         try {
-            String finalStatus = refStatusColl.find(eq("status", ref.getStat())).first().getString("status_name");
-            String finalGrade = refGradesColl.find(eq("grade_id", ref.getGradeId())).first().getString("grade_name");
-            String finalPosition = refPositionsColl.find(eq("position_id", ref.getPosId())).first().getString("position_name");
+            String finalStatus = refStatusColl.find(eq("status", ref.getStatus())).first().getString("status_name");
+            String finalGrade = refGradesColl.find(eq("grade_id", ref.getGrade_id())).first().getString("grade_name");
+            String finalPosition = refPositionsColl.find(eq("position_id", ref.getPosition_id())).first().getString("position_name");
             this.status = finalStatus;
             this.grade = finalGrade;
             this.position = finalPosition;

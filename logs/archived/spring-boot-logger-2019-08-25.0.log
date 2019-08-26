@@ -1,0 +1,549 @@
+2019-08-25 14:36:01,100 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-4] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-25 17:28:47,264 INFO com.example.spera_2.utils_config.MySQLConnection [main] reading configuration settings...
+2019-08-25 17:28:48,287 INFO com.example.spera_2.utils_config.MySQLConnection [main] ...read complete, MySQL instance set
+2019-08-25 17:28:48,344 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] reading configuration settings...
+2019-08-25 17:28:48,851 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:28:48,923 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] ...read complete, MongoDB instance set
+2019-08-25 17:28:48,925 INFO com.example.spera_2.Spera2Application [main] Testing Databases
+2019-08-25 17:28:48,928 INFO com.example.spera_2.Spera2Application [main] testing start...
+2019-08-25 17:28:48,928 INFO com.example.spera_2.Spera2Application [main] MySQL
+2019-08-25 17:28:48,994 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6262e060a029cc1b263400', description='null'}-localhost:27017] Opened connection [connectionId{localValue:1, serverValue:14481}] to localhost:27017
+2019-08-25 17:28:49,002 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6262e060a029cc1b263400', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3937089}
+2019-08-25 17:28:49,078 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Opened connection [connectionId{localValue:2, serverValue:14482}] to localhost:27017
+2019-08-25 17:28:49,509 INFO com.example.spera_2.Spera2Application [main] MySQL Ok
+2019-08-25 17:28:49,509 INFO com.example.spera_2.Spera2Application [main] MongoDB
+2019-08-25 17:28:49,514 INFO com.example.spera_2.Spera2Application [main] MongoDB Ok
+2019-08-25 17:28:50,669 INFO org.springframework.boot.StartupInfoLogger [main] Starting Spera2Application on red.local with PID 52251 (/Users/rakhadjo/NetBeansProjects/spera2/target/classes started by rakhadjo in /Users/rakhadjo/NetBeansProjects/spera2)
+2019-08-25 17:28:50,670 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-08-25 17:28:51,744 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-25 17:28:51,883 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 127ms. Found 4 repository interfaces.
+2019-08-25 17:28:52,416 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$cfc8012e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-25 17:28:53,002 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 7502 (http)
+2019-08-25 17:28:53,040 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-7502"]
+2019-08-25 17:28:53,058 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2019-08-25 17:28:53,059 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-25 17:28:53,199 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2019-08-25 17:28:53,200 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2456 ms
+2019-08-25 17:28:53,330 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] reading configuration settings...
+2019-08-25 17:28:53,332 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:28:53,334 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] ...read complete, MongoDB instance set
+2019-08-25 17:28:53,336 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] reading configuration settings...
+2019-08-25 17:28:53,337 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:28:53,339 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] ...read complete, MongoDB instance set
+2019-08-25 17:28:53,352 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6262e560a029cc1b263401', description='null'}-localhost:27017] Opened connection [connectionId{localValue:3, serverValue:14483}] to localhost:27017
+2019-08-25 17:28:53,353 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6262e560a029cc1b263402', description='null'}-localhost:27017] Opened connection [connectionId{localValue:4, serverValue:14484}] to localhost:27017
+2019-08-25 17:28:53,354 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6262e560a029cc1b263402', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=551277}
+2019-08-25 17:28:53,354 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6262e560a029cc1b263401', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=751729}
+2019-08-25 17:28:53,398 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:28:53,399 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Adding discovered server localhost:27017 to client view of cluster
+2019-08-25 17:28:53,416 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6262e560a029cc1b263403', description='null'}-localhost:27017] Opened connection [connectionId{localValue:5, serverValue:14485}] to localhost:27017
+2019-08-25 17:28:53,417 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6262e560a029cc1b263403', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=541996}
+2019-08-25 17:28:53,418 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6262e560a029cc1b263403', description='null'}-localhost:27017] Discovered cluster type of STANDALONE
+2019-08-25 17:28:54,882 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-25 17:28:55,344 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-7502"]
+2019-08-25 17:28:55,389 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 7502 (http) with context path ''
+2019-08-25 17:28:55,393 INFO org.springframework.boot.StartupInfoLogger [main] Started Spera2Application in 5.671 seconds (JVM running for 15.197)
+2019-08-25 17:32:28,213 INFO org.apache.juli.logging.DirectJDKLog [http-nio-7502-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-25 17:32:28,217 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-7502-exec-2] Initializing Servlet 'dispatcherServlet'
+2019-08-25 17:32:28,416 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-7502-exec-2] Completed initialization in 197 ms
+2019-08-25 17:32:29,222 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-2] reading configuration settings...
+2019-08-25 17:32:29,242 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-2] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:32:29,249 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-2] ...read complete, MongoDB instance set
+2019-08-25 17:32:29,268 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6263bd60a029cc1b263404', description='null'}-localhost:27017] Opened connection [connectionId{localValue:6, serverValue:14493}] to localhost:27017
+2019-08-25 17:32:29,269 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6263bd60a029cc1b263404', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=343678}
+2019-08-25 17:32:29,356 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-2] Opened connection [connectionId{localValue:7, serverValue:14494}] to localhost:27017
+2019-08-25 17:32:29,450 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-2] USERNAME VERIFIED
+2019-08-25 17:32:29,450 INFO com.example.spera_2.utils_config.MySQLConnection [http-nio-7502-exec-2] reading configuration settings...
+2019-08-25 17:32:29,490 INFO com.example.spera_2.utils_config.MySQLConnection [http-nio-7502-exec-2] ...read complete, MySQL instance set
+2019-08-25 17:32:29,696 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-2] EXISTS BUT NOT ACTIVE
+2019-08-25 17:32:29,715 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-2] RC 10 ABOVE ELSE
+2019-08-25 17:32:29,716 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-2] log insertion start...
+2019-08-25 17:32:29,717 WARN com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-2] error status
+2019-08-25 17:32:29,718 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-2] preparing mongo document...
+2019-08-25 17:32:29,719 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-2] ...mongo document prepared successfully
+2019-08-25 17:32:29,719 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-2] inserting log document...
+2019-08-25 17:32:29,800 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-2] ...log insertion success
+2019-08-25 17:35:12,000 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-4] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-25 17:35:16,967 INFO com.example.spera_2.utils_config.MySQLConnection [main] reading configuration settings...
+2019-08-25 17:35:17,190 INFO com.example.spera_2.utils_config.MySQLConnection [main] ...read complete, MySQL instance set
+2019-08-25 17:35:17,191 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] reading configuration settings...
+2019-08-25 17:35:17,464 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:35:17,511 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] ...read complete, MongoDB instance set
+2019-08-25 17:35:17,524 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62646560a029cc56279b34', description='null'}-localhost:27017] Opened connection [connectionId{localValue:1, serverValue:14500}] to localhost:27017
+2019-08-25 17:35:17,530 INFO com.example.spera_2.Spera2Application [main] Testing Databases
+2019-08-25 17:35:17,530 INFO com.example.spera_2.Spera2Application [main] testing start...
+2019-08-25 17:35:17,530 INFO com.example.spera_2.Spera2Application [main] MySQL
+2019-08-25 17:35:17,534 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62646560a029cc56279b34', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2737850}
+2019-08-25 17:35:17,603 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Opened connection [connectionId{localValue:2, serverValue:14501}] to localhost:27017
+2019-08-25 17:35:17,627 INFO com.example.spera_2.Spera2Application [main] MySQL Ok
+2019-08-25 17:35:17,627 INFO com.example.spera_2.Spera2Application [main] MongoDB
+2019-08-25 17:35:17,642 INFO com.example.spera_2.Spera2Application [main] MongoDB Ok
+2019-08-25 17:35:18,159 INFO org.springframework.boot.StartupInfoLogger [main] Starting Spera2Application on red.local with PID 52310 (/Users/rakhadjo/NetBeansProjects/spera2/target/classes started by rakhadjo in /Users/rakhadjo/NetBeansProjects/spera2)
+2019-08-25 17:35:18,160 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-08-25 17:35:19,059 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-25 17:35:19,200 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 127ms. Found 4 repository interfaces.
+2019-08-25 17:35:19,690 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$8b62d9ae] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-25 17:35:20,042 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 7502 (http)
+2019-08-25 17:35:20,060 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-7502"]
+2019-08-25 17:35:20,073 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2019-08-25 17:35:20,073 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-25 17:35:20,198 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2019-08-25 17:35:20,198 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1994 ms
+2019-08-25 17:35:20,312 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] reading configuration settings...
+2019-08-25 17:35:20,314 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:35:20,316 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] ...read complete, MongoDB instance set
+2019-08-25 17:35:20,318 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] reading configuration settings...
+2019-08-25 17:35:20,320 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62646860a029cc56279b35', description='null'}-localhost:27017] Opened connection [connectionId{localValue:3, serverValue:14502}] to localhost:27017
+2019-08-25 17:35:20,321 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:35:20,323 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] ...read complete, MongoDB instance set
+2019-08-25 17:35:20,323 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62646860a029cc56279b35', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2713058}
+2019-08-25 17:35:20,327 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62646860a029cc56279b36', description='null'}-localhost:27017] Opened connection [connectionId{localValue:4, serverValue:14503}] to localhost:27017
+2019-08-25 17:35:20,329 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62646860a029cc56279b36', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1781259}
+2019-08-25 17:35:20,384 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:35:20,387 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Adding discovered server localhost:27017 to client view of cluster
+2019-08-25 17:35:20,420 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62646860a029cc56279b37', description='null'}-localhost:27017] Opened connection [connectionId{localValue:5, serverValue:14504}] to localhost:27017
+2019-08-25 17:35:20,433 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62646860a029cc56279b37', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=12101476}
+2019-08-25 17:35:20,433 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62646860a029cc56279b37', description='null'}-localhost:27017] Discovered cluster type of STANDALONE
+2019-08-25 17:35:21,517 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-25 17:35:21,942 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-7502"]
+2019-08-25 17:35:21,975 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 7502 (http) with context path ''
+2019-08-25 17:35:21,978 INFO org.springframework.boot.StartupInfoLogger [main] Started Spera2Application in 4.231 seconds (JVM running for 8.843)
+2019-08-25 17:40:20,381 INFO org.apache.juli.logging.DirectJDKLog [http-nio-7502-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-25 17:40:20,382 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-7502-exec-1] Initializing Servlet 'dispatcherServlet'
+2019-08-25 17:40:20,412 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-7502-exec-1] Completed initialization in 29 ms
+2019-08-25 17:40:20,682 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] reading configuration settings...
+2019-08-25 17:40:20,687 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-1] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:40:20,690 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] ...read complete, MongoDB instance set
+2019-08-25 17:40:20,694 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62659460a029cc56279b38', description='null'}-localhost:27017] Opened connection [connectionId{localValue:6, serverValue:14515}] to localhost:27017
+2019-08-25 17:40:20,695 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62659460a029cc56279b38', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=703423}
+2019-08-25 17:40:20,698 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-1] Opened connection [connectionId{localValue:7, serverValue:14516}] to localhost:27017
+2019-08-25 17:40:20,704 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] USERNAME VERIFIED
+2019-08-25 17:40:20,709 INFO com.example.spera_2.utils_config.MySQLConnection [http-nio-7502-exec-1] reading configuration settings...
+2019-08-25 17:40:20,749 INFO com.example.spera_2.utils_config.MySQLConnection [http-nio-7502-exec-1] ...read complete, MySQL instance set
+2019-08-25 17:40:20,749 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] MYSQL CONNECTED FROM REAL USER CONTROLLER CLASS
+2019-08-25 17:40:20,783 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] EXISTS: true
+2019-08-25 17:40:20,784 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] ACTIVE: false
+2019-08-25 17:40:20,784 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] EXISTS BUT NOT ACTIVE
+2019-08-25 17:40:20,813 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] RC 10 ABOVE ELSE
+2019-08-25 17:40:20,814 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] log insertion start...
+2019-08-25 17:40:20,814 WARN com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] error status
+2019-08-25 17:40:20,814 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] preparing mongo document...
+2019-08-25 17:40:20,815 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] ...mongo document prepared successfully
+2019-08-25 17:40:20,815 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] inserting log document...
+2019-08-25 17:40:20,861 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] ...log insertion success
+2019-08-25 17:44:04,562 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-4] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-25 17:44:09,992 INFO com.example.spera_2.utils_config.MySQLConnection [main] reading configuration settings...
+2019-08-25 17:44:10,406 INFO com.example.spera_2.utils_config.MySQLConnection [main] ...read complete, MySQL instance set
+2019-08-25 17:44:10,415 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] reading configuration settings...
+2019-08-25 17:44:10,923 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:44:11,195 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62667a60a029cc823045b8', description='null'}-localhost:27017] Opened connection [connectionId{localValue:1, serverValue:14521}] to localhost:27017
+2019-08-25 17:44:11,201 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62667a60a029cc823045b8', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3398532}
+2019-08-25 17:44:11,223 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] ...read complete, MongoDB instance set
+2019-08-25 17:44:11,223 INFO com.example.spera_2.Spera2Application [main] Testing Databases
+2019-08-25 17:44:11,225 INFO com.example.spera_2.Spera2Application [main] testing start...
+2019-08-25 17:44:11,226 INFO com.example.spera_2.Spera2Application [main] MySQL
+2019-08-25 17:44:11,419 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Opened connection [connectionId{localValue:2, serverValue:14522}] to localhost:27017
+2019-08-25 17:44:11,461 INFO com.example.spera_2.Spera2Application [main] MySQL Ok
+2019-08-25 17:44:11,461 INFO com.example.spera_2.Spera2Application [main] MongoDB
+2019-08-25 17:44:11,518 INFO com.example.spera_2.Spera2Application [main] MongoDB Ok
+2019-08-25 17:44:12,247 INFO org.springframework.boot.StartupInfoLogger [main] Starting Spera2Application on red.local with PID 52354 (/Users/rakhadjo/NetBeansProjects/spera2/target/classes started by rakhadjo in /Users/rakhadjo/NetBeansProjects/spera2)
+2019-08-25 17:44:12,248 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-08-25 17:44:13,284 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-25 17:44:13,474 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 182ms. Found 4 repository interfaces.
+2019-08-25 17:44:14,153 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$a8a89245] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-25 17:44:14,698 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 7502 (http)
+2019-08-25 17:44:14,719 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-7502"]
+2019-08-25 17:44:14,733 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2019-08-25 17:44:14,733 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-25 17:44:14,891 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2019-08-25 17:44:14,891 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2593 ms
+2019-08-25 17:44:15,037 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] reading configuration settings...
+2019-08-25 17:44:15,039 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:44:15,086 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] ...read complete, MongoDB instance set
+2019-08-25 17:44:15,091 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] reading configuration settings...
+2019-08-25 17:44:15,093 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:44:15,098 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] ...read complete, MongoDB instance set
+2019-08-25 17:44:15,108 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62667f60a029cc823045b9', description='null'}-localhost:27017] Opened connection [connectionId{localValue:3, serverValue:14524}] to localhost:27017
+2019-08-25 17:44:15,118 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62667f60a029cc823045b9', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=541079}
+2019-08-25 17:44:15,118 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62667f60a029cc823045ba', description='null'}-localhost:27017] Opened connection [connectionId{localValue:4, serverValue:14525}] to localhost:27017
+2019-08-25 17:44:15,129 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62667f60a029cc823045ba', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=10067139}
+2019-08-25 17:44:15,192 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:44:15,200 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Adding discovered server localhost:27017 to client view of cluster
+2019-08-25 17:44:15,247 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62667f60a029cc823045bb', description='null'}-localhost:27017] Opened connection [connectionId{localValue:5, serverValue:14526}] to localhost:27017
+2019-08-25 17:44:15,259 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62667f60a029cc823045bb', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=10862899}
+2019-08-25 17:44:15,260 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62667f60a029cc823045bb', description='null'}-localhost:27017] Discovered cluster type of STANDALONE
+2019-08-25 17:44:16,544 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-25 17:44:16,988 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-7502"]
+2019-08-25 17:44:17,025 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 7502 (http) with context path ''
+2019-08-25 17:44:17,029 INFO org.springframework.boot.StartupInfoLogger [main] Started Spera2Application in 5.387 seconds (JVM running for 11.331)
+2019-08-25 17:44:20,654 INFO org.apache.juli.logging.DirectJDKLog [http-nio-7502-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-25 17:44:20,655 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-7502-exec-2] Initializing Servlet 'dispatcherServlet'
+2019-08-25 17:44:20,686 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-7502-exec-2] Completed initialization in 30 ms
+2019-08-25 17:44:20,875 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-2] reading configuration settings...
+2019-08-25 17:44:20,876 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-2] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:44:20,878 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-2] ...read complete, MongoDB instance set
+2019-08-25 17:44:20,881 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62668460a029cc823045bc', description='null'}-localhost:27017] Opened connection [connectionId{localValue:6, serverValue:14527}] to localhost:27017
+2019-08-25 17:44:20,882 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-2] Cluster description not yet available. Waiting for 30000 ms before timing out
+2019-08-25 17:44:20,883 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62668460a029cc823045bc', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1994308}
+2019-08-25 17:44:20,888 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-2] Opened connection [connectionId{localValue:7, serverValue:14528}] to localhost:27017
+2019-08-25 17:44:20,893 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-2] USERNAME VERIFIED
+2019-08-25 17:44:20,893 INFO com.example.spera_2.utils_config.MySQLConnection [http-nio-7502-exec-2] reading configuration settings...
+2019-08-25 17:44:20,912 INFO com.example.spera_2.utils_config.MySQLConnection [http-nio-7502-exec-2] ...read complete, MySQL instance set
+2019-08-25 17:44:20,913 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-2] MYSQL CONNECTED FROM REAL USER CONTROLLER CLASS
+2019-08-25 17:44:20,976 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-2] EXISTS: true
+2019-08-25 17:44:20,981 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-2] ACTIVE: false
+2019-08-25 17:44:20,982 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-2] EXISTS BUT NOT ACTIVE
+2019-08-25 17:44:20,996 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-2] RC 10 ABOVE ELSE
+2019-08-25 17:44:20,996 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-2] log insertion start...
+2019-08-25 17:44:20,997 WARN com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-2] error status
+2019-08-25 17:44:20,997 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-2] preparing mongo document...
+2019-08-25 17:44:20,998 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-2] ...mongo document prepared successfully
+2019-08-25 17:44:20,998 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-2] inserting log document...
+2019-08-25 17:44:21,030 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-2] ...log insertion success
+2019-08-25 17:44:22,808 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-3] reading configuration settings...
+2019-08-25 17:44:22,811 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-3] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:44:22,825 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-3] ...read complete, MongoDB instance set
+2019-08-25 17:44:22,826 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-3] Cluster description not yet available. Waiting for 30000 ms before timing out
+2019-08-25 17:44:22,842 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62668660a029cc823045be', description='null'}-localhost:27017] Opened connection [connectionId{localValue:8, serverValue:14529}] to localhost:27017
+2019-08-25 17:44:22,843 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62668660a029cc823045be', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=455699}
+2019-08-25 17:44:22,874 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-3] Opened connection [connectionId{localValue:9, serverValue:14530}] to localhost:27017
+2019-08-25 17:44:22,879 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-3] USERNAME VERIFIED
+2019-08-25 17:44:22,879 INFO com.example.spera_2.utils_config.MySQLConnection [http-nio-7502-exec-3] reading configuration settings...
+2019-08-25 17:44:22,896 INFO com.example.spera_2.utils_config.MySQLConnection [http-nio-7502-exec-3] ...read complete, MySQL instance set
+2019-08-25 17:44:22,897 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-3] MYSQL CONNECTED FROM REAL USER CONTROLLER CLASS
+2019-08-25 17:44:22,905 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-3] EXISTS: true
+2019-08-25 17:44:22,906 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-3] ACTIVE: false
+2019-08-25 17:44:22,906 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-3] EXISTS BUT NOT ACTIVE
+2019-08-25 17:44:22,909 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-3] RC 10 ABOVE ELSE
+2019-08-25 17:44:22,910 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-3] log insertion start...
+2019-08-25 17:44:22,910 WARN com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-3] error status
+2019-08-25 17:44:22,910 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-3] preparing mongo document...
+2019-08-25 17:44:22,910 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-3] ...mongo document prepared successfully
+2019-08-25 17:44:22,911 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-3] inserting log document...
+2019-08-25 17:44:22,940 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-3] ...log insertion success
+2019-08-25 17:44:57,970 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-4] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-25 17:45:03,162 INFO com.example.spera_2.utils_config.MySQLConnection [main] reading configuration settings...
+2019-08-25 17:45:03,398 INFO com.example.spera_2.utils_config.MySQLConnection [main] ...read complete, MySQL instance set
+2019-08-25 17:45:03,399 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] reading configuration settings...
+2019-08-25 17:45:03,688 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:45:03,753 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6266af60a029cca1742fed', description='null'}-localhost:27017] Opened connection [connectionId{localValue:1, serverValue:14532}] to localhost:27017
+2019-08-25 17:45:03,758 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6266af60a029cca1742fed', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2902269}
+2019-08-25 17:45:03,781 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] ...read complete, MongoDB instance set
+2019-08-25 17:45:03,782 INFO com.example.spera_2.Spera2Application [main] Testing Databases
+2019-08-25 17:45:03,784 INFO com.example.spera_2.Spera2Application [main] testing start...
+2019-08-25 17:45:03,785 INFO com.example.spera_2.Spera2Application [main] MySQL
+2019-08-25 17:45:03,840 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Opened connection [connectionId{localValue:2, serverValue:14533}] to localhost:27017
+2019-08-25 17:45:03,868 INFO com.example.spera_2.Spera2Application [main] MySQL Ok
+2019-08-25 17:45:03,869 INFO com.example.spera_2.Spera2Application [main] MongoDB
+2019-08-25 17:45:03,873 INFO com.example.spera_2.Spera2Application [main] MongoDB Ok
+2019-08-25 17:45:04,437 INFO org.springframework.boot.StartupInfoLogger [main] Starting Spera2Application on red.local with PID 52385 (/Users/rakhadjo/NetBeansProjects/spera2/target/classes started by rakhadjo in /Users/rakhadjo/NetBeansProjects/spera2)
+2019-08-25 17:45:04,438 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-08-25 17:45:05,341 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-25 17:45:05,451 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 103ms. Found 4 repository interfaces.
+2019-08-25 17:45:05,942 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$bd9a89a0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-25 17:45:06,336 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 7502 (http)
+2019-08-25 17:45:06,354 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-7502"]
+2019-08-25 17:45:06,366 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2019-08-25 17:45:06,366 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-25 17:45:06,481 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2019-08-25 17:45:06,481 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1989 ms
+2019-08-25 17:45:06,618 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] reading configuration settings...
+2019-08-25 17:45:06,623 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:45:06,625 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] ...read complete, MongoDB instance set
+2019-08-25 17:45:06,627 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] reading configuration settings...
+2019-08-25 17:45:06,628 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6266b260a029cca1742fee', description='null'}-localhost:27017] Opened connection [connectionId{localValue:3, serverValue:14534}] to localhost:27017
+2019-08-25 17:45:06,630 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:45:06,630 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6266b260a029cca1742fee', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=488963}
+2019-08-25 17:45:06,632 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] ...read complete, MongoDB instance set
+2019-08-25 17:45:06,633 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6266b260a029cca1742fef', description='null'}-localhost:27017] Opened connection [connectionId{localValue:4, serverValue:14535}] to localhost:27017
+2019-08-25 17:45:06,634 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6266b260a029cca1742fef', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=478955}
+2019-08-25 17:45:06,698 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:45:06,701 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Adding discovered server localhost:27017 to client view of cluster
+2019-08-25 17:45:06,709 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6266b260a029cca1742ff0', description='null'}-localhost:27017] Opened connection [connectionId{localValue:5, serverValue:14536}] to localhost:27017
+2019-08-25 17:45:06,710 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6266b260a029cca1742ff0', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=600160}
+2019-08-25 17:45:06,710 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6266b260a029cca1742ff0', description='null'}-localhost:27017] Discovered cluster type of STANDALONE
+2019-08-25 17:45:08,085 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-25 17:45:08,528 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-7502"]
+2019-08-25 17:45:08,605 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 7502 (http) with context path ''
+2019-08-25 17:45:08,612 INFO org.springframework.boot.StartupInfoLogger [main] Started Spera2Application in 4.643 seconds (JVM running for 9.527)
+2019-08-25 17:45:12,927 INFO org.apache.juli.logging.DirectJDKLog [http-nio-7502-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-25 17:45:12,928 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-7502-exec-2] Initializing Servlet 'dispatcherServlet'
+2019-08-25 17:45:12,954 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-7502-exec-2] Completed initialization in 25 ms
+2019-08-25 17:45:13,206 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-2] reading configuration settings...
+2019-08-25 17:45:13,213 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-2] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:45:13,217 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-2] ...read complete, MongoDB instance set
+2019-08-25 17:45:13,223 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-2] Cluster description not yet available. Waiting for 30000 ms before timing out
+2019-08-25 17:45:13,226 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6266b960a029cca1742ff1', description='null'}-localhost:27017] Opened connection [connectionId{localValue:6, serverValue:14537}] to localhost:27017
+2019-08-25 17:45:13,227 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6266b960a029cca1742ff1', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=572831}
+2019-08-25 17:45:13,231 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-2] Opened connection [connectionId{localValue:7, serverValue:14538}] to localhost:27017
+2019-08-25 17:45:13,243 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-2] USERNAME VERIFIED
+2019-08-25 17:45:13,244 INFO com.example.spera_2.utils_config.MySQLConnection [http-nio-7502-exec-2] reading configuration settings...
+2019-08-25 17:45:13,255 INFO com.example.spera_2.utils_config.MySQLConnection [http-nio-7502-exec-2] ...read complete, MySQL instance set
+2019-08-25 17:45:13,257 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-2] MYSQL CONNECTED FROM REAL USER CONTROLLER CLASS
+2019-08-25 17:45:13,290 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-2] EXISTS: true
+2019-08-25 17:45:13,290 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-2] ACTIVE: false
+2019-08-25 17:45:13,290 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-2] EXISTS BUT NOT ACTIVE
+2019-08-25 17:45:13,299 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-2] RC 10 ABOVE ELSE
+2019-08-25 17:45:13,300 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-2] log insertion start...
+2019-08-25 17:45:13,302 WARN com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-2] error status
+2019-08-25 17:45:13,303 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-2] preparing mongo document...
+2019-08-25 17:45:13,305 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-2] ...mongo document prepared successfully
+2019-08-25 17:45:13,305 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-2] inserting log document...
+2019-08-25 17:45:13,338 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-2] ...log insertion success
+2019-08-25 17:45:14,614 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-3] reading configuration settings...
+2019-08-25 17:45:14,616 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-3] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:45:14,619 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-3] ...read complete, MongoDB instance set
+2019-08-25 17:45:14,619 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-3] Cluster description not yet available. Waiting for 30000 ms before timing out
+2019-08-25 17:45:14,632 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6266ba60a029cca1742ff3', description='null'}-localhost:27017] Opened connection [connectionId{localValue:8, serverValue:14540}] to localhost:27017
+2019-08-25 17:45:14,634 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6266ba60a029cca1742ff3', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=979815}
+2019-08-25 17:45:14,662 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-3] Opened connection [connectionId{localValue:9, serverValue:14541}] to localhost:27017
+2019-08-25 17:45:14,694 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-3] USERNAME VERIFIED
+2019-08-25 17:45:14,694 INFO com.example.spera_2.utils_config.MySQLConnection [http-nio-7502-exec-3] reading configuration settings...
+2019-08-25 17:45:14,710 INFO com.example.spera_2.utils_config.MySQLConnection [http-nio-7502-exec-3] ...read complete, MySQL instance set
+2019-08-25 17:45:14,711 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-3] MYSQL CONNECTED FROM REAL USER CONTROLLER CLASS
+2019-08-25 17:45:14,719 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-3] EXISTS: true
+2019-08-25 17:45:14,719 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-3] ACTIVE: false
+2019-08-25 17:45:14,719 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-3] EXISTS BUT NOT ACTIVE
+2019-08-25 17:45:14,721 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-3] RC 10 ABOVE ELSE
+2019-08-25 17:45:14,722 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-3] log insertion start...
+2019-08-25 17:45:14,723 WARN com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-3] error status
+2019-08-25 17:45:14,723 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-3] preparing mongo document...
+2019-08-25 17:45:14,723 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-3] ...mongo document prepared successfully
+2019-08-25 17:45:14,723 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-3] inserting log document...
+2019-08-25 17:45:14,728 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-3] ...log insertion success
+2019-08-25 17:45:16,024 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-4] reading configuration settings...
+2019-08-25 17:45:16,025 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-4] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:45:16,037 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-4] ...read complete, MongoDB instance set
+2019-08-25 17:45:16,038 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-4] Cluster description not yet available. Waiting for 30000 ms before timing out
+2019-08-25 17:45:16,058 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6266bc60a029cca1742ff5', description='null'}-localhost:27017] Opened connection [connectionId{localValue:10, serverValue:14542}] to localhost:27017
+2019-08-25 17:45:16,060 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6266bc60a029cca1742ff5', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=771731}
+2019-08-25 17:45:16,080 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-4] Opened connection [connectionId{localValue:11, serverValue:14543}] to localhost:27017
+2019-08-25 17:45:16,121 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-4] USERNAME VERIFIED
+2019-08-25 17:45:16,121 INFO com.example.spera_2.utils_config.MySQLConnection [http-nio-7502-exec-4] reading configuration settings...
+2019-08-25 17:45:16,136 INFO com.example.spera_2.utils_config.MySQLConnection [http-nio-7502-exec-4] ...read complete, MySQL instance set
+2019-08-25 17:45:16,137 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-4] MYSQL CONNECTED FROM REAL USER CONTROLLER CLASS
+2019-08-25 17:45:16,141 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-4] EXISTS: true
+2019-08-25 17:45:16,141 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-4] ACTIVE: false
+2019-08-25 17:45:16,142 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-4] EXISTS BUT NOT ACTIVE
+2019-08-25 17:45:16,144 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-4] RC 10 ABOVE ELSE
+2019-08-25 17:45:16,145 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-4] log insertion start...
+2019-08-25 17:45:16,145 WARN com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-4] error status
+2019-08-25 17:45:16,145 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-4] preparing mongo document...
+2019-08-25 17:45:16,145 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-4] ...mongo document prepared successfully
+2019-08-25 17:45:16,145 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-4] inserting log document...
+2019-08-25 17:45:16,153 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-4] ...log insertion success
+2019-08-25 17:47:33,614 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-4] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-25 17:48:01,530 INFO com.example.spera_2.utils_config.MySQLConnection [main] reading configuration settings...
+2019-08-25 17:48:01,787 INFO com.example.spera_2.utils_config.MySQLConnection [main] ...read complete, MySQL instance set
+2019-08-25 17:48:01,788 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] reading configuration settings...
+2019-08-25 17:48:02,078 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:48:02,152 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] ...read complete, MongoDB instance set
+2019-08-25 17:48:02,153 INFO com.example.spera_2.Spera2Application [main] Testing Databases
+2019-08-25 17:48:02,154 INFO com.example.spera_2.Spera2Application [main] testing start...
+2019-08-25 17:48:02,155 INFO com.example.spera_2.Spera2Application [main] MySQL
+2019-08-25 17:48:02,168 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62676260a029ccb45fb723', description='null'}-localhost:27017] Opened connection [connectionId{localValue:1, serverValue:14553}] to localhost:27017
+2019-08-25 17:48:02,179 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62676260a029ccb45fb723', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8704280}
+2019-08-25 17:48:02,206 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Opened connection [connectionId{localValue:2, serverValue:14554}] to localhost:27017
+2019-08-25 17:48:02,228 INFO com.example.spera_2.Spera2Application [main] MySQL Ok
+2019-08-25 17:48:02,229 INFO com.example.spera_2.Spera2Application [main] MongoDB
+2019-08-25 17:48:02,232 INFO com.example.spera_2.Spera2Application [main] MongoDB Ok
+2019-08-25 17:48:02,887 INFO org.springframework.boot.StartupInfoLogger [main] Starting Spera2Application on red.local with PID 52404 (/Users/rakhadjo/NetBeansProjects/spera2/target/classes started by rakhadjo in /Users/rakhadjo/NetBeansProjects/spera2)
+2019-08-25 17:48:02,890 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-08-25 17:48:03,879 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-25 17:48:03,986 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 97ms. Found 4 repository interfaces.
+2019-08-25 17:48:04,512 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$9a979629] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-25 17:48:05,047 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 7502 (http)
+2019-08-25 17:48:05,081 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-7502"]
+2019-08-25 17:48:05,116 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2019-08-25 17:48:05,123 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-25 17:48:05,260 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2019-08-25 17:48:05,260 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2306 ms
+2019-08-25 17:48:05,651 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] reading configuration settings...
+2019-08-25 17:48:05,653 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:48:05,656 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] ...read complete, MongoDB instance set
+2019-08-25 17:48:05,658 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] reading configuration settings...
+2019-08-25 17:48:05,660 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62676560a029ccb45fb724', description='null'}-localhost:27017] Opened connection [connectionId{localValue:3, serverValue:14555}] to localhost:27017
+2019-08-25 17:48:05,662 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62676560a029ccb45fb724', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=730630}
+2019-08-25 17:48:05,663 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:48:05,665 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] ...read complete, MongoDB instance set
+2019-08-25 17:48:05,675 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62676560a029ccb45fb725', description='null'}-localhost:27017] Opened connection [connectionId{localValue:4, serverValue:14556}] to localhost:27017
+2019-08-25 17:48:05,676 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62676560a029ccb45fb725', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=510282}
+2019-08-25 17:48:05,828 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:48:05,828 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Adding discovered server localhost:27017 to client view of cluster
+2019-08-25 17:48:05,832 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62676560a029ccb45fb726', description='null'}-localhost:27017] Opened connection [connectionId{localValue:5, serverValue:14557}] to localhost:27017
+2019-08-25 17:48:05,834 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62676560a029ccb45fb726', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=943016}
+2019-08-25 17:48:05,834 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62676560a029ccb45fb726', description='null'}-localhost:27017] Discovered cluster type of STANDALONE
+2019-08-25 17:48:07,383 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-25 17:48:07,827 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-7502"]
+2019-08-25 17:48:07,860 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 7502 (http) with context path ''
+2019-08-25 17:48:07,866 INFO org.springframework.boot.StartupInfoLogger [main] Started Spera2Application in 5.508 seconds (JVM running for 13.853)
+2019-08-25 17:48:12,492 INFO org.apache.juli.logging.DirectJDKLog [http-nio-7502-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-25 17:48:12,492 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-7502-exec-1] Initializing Servlet 'dispatcherServlet'
+2019-08-25 17:48:12,554 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-7502-exec-1] Completed initialization in 61 ms
+2019-08-25 17:48:12,807 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] reading configuration settings...
+2019-08-25 17:48:12,809 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-1] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:48:12,812 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] ...read complete, MongoDB instance set
+2019-08-25 17:48:12,818 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-1] Cluster description not yet available. Waiting for 30000 ms before timing out
+2019-08-25 17:48:12,827 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62676c60a029ccb45fb727', description='null'}-localhost:27017] Opened connection [connectionId{localValue:6, serverValue:14558}] to localhost:27017
+2019-08-25 17:48:12,832 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d62676c60a029ccb45fb727', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=4578099}
+2019-08-25 17:48:12,848 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-1] Opened connection [connectionId{localValue:7, serverValue:14559}] to localhost:27017
+2019-08-25 17:48:12,889 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] USERNAME VERIFIED
+2019-08-25 17:48:12,889 INFO com.example.spera_2.utils_config.MySQLConnection [http-nio-7502-exec-1] reading configuration settings...
+2019-08-25 17:48:12,904 INFO com.example.spera_2.utils_config.MySQLConnection [http-nio-7502-exec-1] ...read complete, MySQL instance set
+2019-08-25 17:48:12,905 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] MYSQL CONNECTED FROM REAL USER CONTROLLER CLASS
+2019-08-25 17:48:12,927 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] EXISTS: true
+2019-08-25 17:48:12,927 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] ACTIVE: false
+2019-08-25 17:48:12,928 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] EXISTS BUT NOT ACTIVE
+2019-08-25 17:48:12,928 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] BUILDING NEW TOKEN
+2019-08-25 17:48:12,930 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] NEW TOKEN GENERATED, INSERTING INTO USER BEARER
+2019-08-25 17:48:12,934 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] INSERT SUCCESS, CREATING RESPONSE BODY
+2019-08-25 17:48:12,935 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] RC 10 ABOVE ELSE
+2019-08-25 17:48:12,936 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] log insertion start...
+2019-08-25 17:48:12,936 WARN com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] error status
+2019-08-25 17:48:12,936 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] preparing mongo document...
+2019-08-25 17:48:12,937 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] ...mongo document prepared successfully
+2019-08-25 17:48:12,937 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] inserting log document...
+2019-08-25 17:48:12,968 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] ...log insertion success
+2019-08-25 17:49:04,851 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-4] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-25 17:49:24,470 INFO com.example.spera_2.utils_config.MySQLConnection [main] reading configuration settings...
+2019-08-25 17:49:24,785 INFO com.example.spera_2.utils_config.MySQLConnection [main] ...read complete, MySQL instance set
+2019-08-25 17:49:24,788 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] reading configuration settings...
+2019-08-25 17:49:25,239 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:49:25,300 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] ...read complete, MongoDB instance set
+2019-08-25 17:49:25,300 INFO com.example.spera_2.Spera2Application [main] Testing Databases
+2019-08-25 17:49:25,301 INFO com.example.spera_2.Spera2Application [main] testing start...
+2019-08-25 17:49:25,301 INFO com.example.spera_2.Spera2Application [main] MySQL
+2019-08-25 17:49:25,334 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6267b560a029ccd4f23652', description='null'}-localhost:27017] Opened connection [connectionId{localValue:1, serverValue:14562}] to localhost:27017
+2019-08-25 17:49:25,340 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6267b560a029ccd4f23652', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3367567}
+2019-08-25 17:49:25,366 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Opened connection [connectionId{localValue:2, serverValue:14563}] to localhost:27017
+2019-08-25 17:49:25,397 INFO com.example.spera_2.Spera2Application [main] MySQL Ok
+2019-08-25 17:49:25,398 INFO com.example.spera_2.Spera2Application [main] MongoDB
+2019-08-25 17:49:25,402 INFO com.example.spera_2.Spera2Application [main] MongoDB Ok
+2019-08-25 17:49:26,149 INFO org.springframework.boot.StartupInfoLogger [main] Starting Spera2Application on red.local with PID 52436 (/Users/rakhadjo/NetBeansProjects/spera2/target/classes started by rakhadjo in /Users/rakhadjo/NetBeansProjects/spera2)
+2019-08-25 17:49:26,149 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-08-25 17:49:27,240 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-25 17:49:27,348 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 99ms. Found 4 repository interfaces.
+2019-08-25 17:49:27,847 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$3c8fe7e5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-25 17:49:28,284 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 7502 (http)
+2019-08-25 17:49:28,303 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-7502"]
+2019-08-25 17:49:28,316 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2019-08-25 17:49:28,317 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-25 17:49:28,436 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2019-08-25 17:49:28,437 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2211 ms
+2019-08-25 17:49:28,549 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] reading configuration settings...
+2019-08-25 17:49:28,554 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:49:28,556 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] ...read complete, MongoDB instance set
+2019-08-25 17:49:28,558 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] reading configuration settings...
+2019-08-25 17:49:28,560 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:49:28,562 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] ...read complete, MongoDB instance set
+2019-08-25 17:49:28,568 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6267b860a029ccd4f23653', description='null'}-localhost:27017] Opened connection [connectionId{localValue:3, serverValue:14564}] to localhost:27017
+2019-08-25 17:49:28,571 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6267b860a029ccd4f23653', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=514969}
+2019-08-25 17:49:28,573 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6267b860a029ccd4f23654', description='null'}-localhost:27017] Opened connection [connectionId{localValue:4, serverValue:14565}] to localhost:27017
+2019-08-25 17:49:28,577 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6267b860a029ccd4f23654', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3664359}
+2019-08-25 17:49:28,626 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:49:28,626 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Adding discovered server localhost:27017 to client view of cluster
+2019-08-25 17:49:28,644 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6267b860a029ccd4f23655', description='null'}-localhost:27017] Opened connection [connectionId{localValue:5, serverValue:14566}] to localhost:27017
+2019-08-25 17:49:28,699 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6267b860a029ccd4f23655', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=53675080}
+2019-08-25 17:49:28,700 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6267b860a029ccd4f23655', description='null'}-localhost:27017] Discovered cluster type of STANDALONE
+2019-08-25 17:49:30,361 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-25 17:49:31,097 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-7502"]
+2019-08-25 17:49:31,148 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 7502 (http) with context path ''
+2019-08-25 17:49:31,155 INFO org.springframework.boot.StartupInfoLogger [main] Started Spera2Application in 5.626 seconds (JVM running for 11.51)
+2019-08-25 17:49:39,930 INFO org.apache.juli.logging.DirectJDKLog [http-nio-7502-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-25 17:49:39,932 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-7502-exec-1] Initializing Servlet 'dispatcherServlet'
+2019-08-25 17:49:39,987 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-7502-exec-1] Completed initialization in 55 ms
+2019-08-25 17:49:40,256 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] reading configuration settings...
+2019-08-25 17:49:40,261 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-1] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:49:40,263 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] ...read complete, MongoDB instance set
+2019-08-25 17:49:40,268 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-1] Cluster description not yet available. Waiting for 30000 ms before timing out
+2019-08-25 17:49:40,274 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6267c460a029ccd4f23656', description='null'}-localhost:27017] Opened connection [connectionId{localValue:6, serverValue:14568}] to localhost:27017
+2019-08-25 17:49:40,275 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6267c460a029ccd4f23656', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=428465}
+2019-08-25 17:49:40,278 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-1] Opened connection [connectionId{localValue:7, serverValue:14569}] to localhost:27017
+2019-08-25 17:49:40,287 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] USERNAME VERIFIED
+2019-08-25 17:49:40,288 INFO com.example.spera_2.utils_config.MySQLConnection [http-nio-7502-exec-1] reading configuration settings...
+2019-08-25 17:49:40,302 INFO com.example.spera_2.utils_config.MySQLConnection [http-nio-7502-exec-1] ...read complete, MySQL instance set
+2019-08-25 17:49:40,303 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] MYSQL CONNECTED FROM REAL USER CONTROLLER CLASS
+2019-08-25 17:49:40,338 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] EXISTS: true
+2019-08-25 17:49:40,339 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] ACTIVE: false
+2019-08-25 17:49:40,339 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] EXISTS BUT NOT ACTIVE
+2019-08-25 17:49:40,339 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] BUILDING NEW TOKEN
+2019-08-25 17:49:40,347 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] NEW TOKEN GENERATED, INSERTING INTO USER BEARER
+2019-08-25 17:49:40,351 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] INSERT SUCCESS, CREATING RESPONSE BODY
+2019-08-25 17:49:40,353 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] log insertion start...
+2019-08-25 17:49:40,354 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] not an error
+2019-08-25 17:49:40,355 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] preparing mongo document...
+2019-08-25 17:49:40,355 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] ...mongo document prepared successfully
+2019-08-25 17:49:40,355 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] inserting log document...
+2019-08-25 17:49:40,382 ERROR com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] failed to store log file: Can't find a codec for class com.example.spera_2.models.Employee.
+2019-08-25 17:53:48,062 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-4] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-25 17:53:52,913 INFO com.example.spera_2.utils_config.MySQLConnection [main] reading configuration settings...
+2019-08-25 17:53:53,386 INFO com.example.spera_2.utils_config.MySQLConnection [main] ...read complete, MySQL instance set
+2019-08-25 17:53:53,427 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] reading configuration settings...
+2019-08-25 17:53:54,085 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:53:54,172 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] ...read complete, MongoDB instance set
+2019-08-25 17:53:54,174 INFO com.example.spera_2.Spera2Application [main] Testing Databases
+2019-08-25 17:53:54,174 INFO com.example.spera_2.Spera2Application [main] testing start...
+2019-08-25 17:53:54,174 INFO com.example.spera_2.Spera2Application [main] MySQL
+2019-08-25 17:53:54,185 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6268c260a029ccf8f5ffeb', description='null'}-localhost:27017] Opened connection [connectionId{localValue:1, serverValue:14578}] to localhost:27017
+2019-08-25 17:53:54,198 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6268c260a029ccf8f5ffeb', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=8274924}
+2019-08-25 17:53:54,234 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Opened connection [connectionId{localValue:2, serverValue:14579}] to localhost:27017
+2019-08-25 17:53:54,253 INFO com.example.spera_2.Spera2Application [main] MySQL Ok
+2019-08-25 17:53:54,253 INFO com.example.spera_2.Spera2Application [main] MongoDB
+2019-08-25 17:53:54,256 INFO com.example.spera_2.Spera2Application [main] MongoDB Ok
+2019-08-25 17:53:54,825 INFO org.springframework.boot.StartupInfoLogger [main] Starting Spera2Application on red.local with PID 52472 (/Users/rakhadjo/NetBeansProjects/spera2/target/classes started by rakhadjo in /Users/rakhadjo/NetBeansProjects/spera2)
+2019-08-25 17:53:54,826 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-08-25 17:53:55,664 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-08-25 17:53:55,798 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 124ms. Found 4 repository interfaces.
+2019-08-25 17:53:56,296 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$86a30f15] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-25 17:53:56,747 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 7502 (http)
+2019-08-25 17:53:56,766 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-7502"]
+2019-08-25 17:53:56,782 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2019-08-25 17:53:56,787 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-25 17:53:56,935 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2019-08-25 17:53:56,935 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2043 ms
+2019-08-25 17:53:57,051 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] reading configuration settings...
+2019-08-25 17:53:57,053 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:53:57,088 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] ...read complete, MongoDB instance set
+2019-08-25 17:53:57,179 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] reading configuration settings...
+2019-08-25 17:53:57,198 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:53:57,202 INFO com.example.spera_2.utils_config.MongoCompassConnection [main] ...read complete, MongoDB instance set
+2019-08-25 17:53:57,250 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6268c560a029ccf8f5ffec', description='null'}-localhost:27017] Opened connection [connectionId{localValue:3, serverValue:14580}] to localhost:27017
+2019-08-25 17:53:57,259 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6268c560a029ccf8f5ffec', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=951103}
+2019-08-25 17:53:57,259 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6268c560a029ccf8f5ffed', description='null'}-localhost:27017] Opened connection [connectionId{localValue:4, serverValue:14581}] to localhost:27017
+2019-08-25 17:53:57,271 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6268c560a029ccf8f5ffed', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=11633662}
+2019-08-25 17:53:57,463 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:53:57,464 INFO com.mongodb.diagnostics.logging.SLF4JLogger [main] Adding discovered server localhost:27017 to client view of cluster
+2019-08-25 17:53:57,608 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6268c560a029ccf8f5ffee', description='null'}-localhost:27017] Opened connection [connectionId{localValue:5, serverValue:14582}] to localhost:27017
+2019-08-25 17:53:57,618 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6268c560a029ccf8f5ffee', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=10197444}
+2019-08-25 17:53:57,631 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6268c560a029ccf8f5ffee', description='null'}-localhost:27017] Discovered cluster type of STANDALONE
+2019-08-25 17:53:58,910 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-25 17:53:59,444 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-7502"]
+2019-08-25 17:53:59,492 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 7502 (http) with context path ''
+2019-08-25 17:53:59,501 INFO org.springframework.boot.StartupInfoLogger [main] Started Spera2Application in 5.134 seconds (JVM running for 10.359)
+2019-08-25 17:54:22,000 INFO org.apache.juli.logging.DirectJDKLog [http-nio-7502-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-25 17:54:22,002 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-7502-exec-1] Initializing Servlet 'dispatcherServlet'
+2019-08-25 17:54:22,074 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-7502-exec-1] Completed initialization in 70 ms
+2019-08-25 17:54:22,369 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] reading configuration settings...
+2019-08-25 17:54:22,374 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-1] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-08-25 17:54:22,376 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] ...read complete, MongoDB instance set
+2019-08-25 17:54:22,383 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-1] Cluster description not yet available. Waiting for 30000 ms before timing out
+2019-08-25 17:54:22,387 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6268de60a029ccf8f5ffef', description='null'}-localhost:27017] Opened connection [connectionId{localValue:6, serverValue:14584}] to localhost:27017
+2019-08-25 17:54:22,389 INFO com.mongodb.diagnostics.logging.SLF4JLogger [cluster-ClusterId{value='5d6268de60a029ccf8f5ffef', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 10]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1981760}
+2019-08-25 17:54:22,393 INFO com.mongodb.diagnostics.logging.SLF4JLogger [http-nio-7502-exec-1] Opened connection [connectionId{localValue:7, serverValue:14585}] to localhost:27017
+2019-08-25 17:54:22,409 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] USERNAME VERIFIED
+2019-08-25 17:54:22,409 INFO com.example.spera_2.utils_config.MySQLConnection [http-nio-7502-exec-1] reading configuration settings...
+2019-08-25 17:54:22,435 INFO com.example.spera_2.utils_config.MySQLConnection [http-nio-7502-exec-1] ...read complete, MySQL instance set
+2019-08-25 17:54:22,436 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] MYSQL CONNECTED FROM REAL USER CONTROLLER CLASS
+2019-08-25 17:54:22,504 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] EXISTS: true
+2019-08-25 17:54:22,511 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] ACTIVE: false
+2019-08-25 17:54:22,511 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] EXISTS BUT NOT ACTIVE
+2019-08-25 17:54:22,511 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] BUILDING NEW TOKEN
+2019-08-25 17:54:22,519 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] NEW TOKEN GENERATED, INSERTING INTO USER BEARER
+2019-08-25 17:54:22,538 INFO com.example.spera_2.controllers.logic.RealUserController [http-nio-7502-exec-1] INSERT SUCCESS, CREATING RESPONSE BODY
+2019-08-25 17:54:22,541 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] log insertion start...
+2019-08-25 17:54:22,542 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] not an error
+2019-08-25 17:54:22,542 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] preparing mongo document...
+2019-08-25 17:54:22,542 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] ...mongo document prepared successfully
+2019-08-25 17:54:22,542 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] inserting log document...
+2019-08-25 17:54:22,621 INFO com.example.spera_2.utils_config.MongoCompassConnection [http-nio-7502-exec-1] ...log insertion success
+2019-08-25 20:47:26,820 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-4] Shutting down ExecutorService 'applicationTaskExecutor'

@@ -5,6 +5,11 @@
  */
 package com.example.spera_2.models;
 
+import com.example.spera_2.models.requests.UserLoginRequest;
+import com.example.spera_2.utils_config.MySQLConnection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
@@ -13,31 +18,37 @@ import javax.validation.constraints.NotBlank;
  * @author rakhadjo
  */
 
-@Entity
-@Table(name = "user")
+//@Entity
+//@Table(name = "user")
 public class User {
-    @Id
-    @GeneratedValue
+    //@Id
+    //@GeneratedValue
     private Integer id;
-    @NotBlank
+    //@NotBlank
     private String nik;
-    @NotBlank
+    //@NotBlank
     private String auth_key;
-    @NotBlank
+    //@NotBlank
     private String password_hash;
     
     private String password_reset_token;
-    @NotBlank
+    //@NotBlank
     private String email;
-    @NotBlank
+    //@NotBlank
     private int status;
-    @NotBlank
+    //@NotBlank
     private int created_at;
-    @NotBlank
+    //@NotBlank
     private int updated_at;
     
-    public User() {}
-    public User(Integer id, String nik, String auth_key, String password_hash, String password_reset_token, String email, int status, int created_at, int updated_at) {
+    MySQLConnection connection;
+    
+    public User() throws SQLException {
+        this.connection = new MySQLConnection();
+    }
+    
+    public User(Integer id, String nik, String auth_key, String password_hash, String password_reset_token, String email, int status, int created_at, int updated_at) throws SQLException {
+        this.connection = new MySQLConnection();
         this.id = id;
         this.nik = nik;
         this.auth_key = auth_key;
@@ -47,6 +58,12 @@ public class User {
         this.status = status;
         this.created_at = created_at;
         this.updated_at = updated_at;
+    }
+    
+    public User(UserLoginRequest ulr) throws SQLException {
+        this.connection = new MySQLConnection();
+        this.nik = ulr.getUsername();
+        this.password_hash = ulr.getPassword();
     }
     
     public Integer getId() { return id; }
@@ -75,4 +92,21 @@ public class User {
     
     public int getUpdatedAt() { return updated_at; }
     public void setUpdatedAt(int updated_at) { this.updated_at = updated_at; }
+    
+    /*
+    checks whether user object exists in user table
+    */
+    public boolean existsInUserTable() throws SQLException {
+        String sql = "SELECT * FROM `user` WHERE "
+                + "username = ? AND password_hash = ?;";
+        PreparedStatement pstm = connection.prepareStmt(sql);
+        pstm.setString(1, this.nik);
+        pstm.setString(2, this.password_hash);
+        ResultSet rslt = pstm.executeQuery();
+        while (rslt.next()) {
+            if (rslt.getString("username").equals(this.nik) && rslt.getString("password_hash").equals(this.password_hash)) {
+                return true;
+            }
+        } return false;
+    }
 }

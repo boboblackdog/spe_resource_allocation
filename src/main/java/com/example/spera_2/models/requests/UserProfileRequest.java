@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.example.spera_2.models.requests;
 
 import org.bson.Document;
@@ -11,7 +7,7 @@ import org.bson.Document;
  *
  * @author rakhadjo
  */
-public class NikRequest {
+public class UserProfileRequest {
     
     private String nik;
     private String device_id;
@@ -19,13 +15,22 @@ public class NikRequest {
     public String getNik() { return nik; }
     public void setNik(String nik) { this.nik = nik; }
     
-    public String getDeviceId() { return device_id; }
-    public void setDeviceId(String device_id) { this.device_id = device_id; }
+    public String getDevice_id() { return device_id; }
+    public void setDevice_id(String device_id) { this.device_id = device_id; }
     
-    public NikRequest() {}
-    public NikRequest(String nik, String device_id) {
+    public UserProfileRequest() {}
+    public UserProfileRequest(String nik, String device_id) {
         this.nik = nik;
         this.device_id = device_id;
+    }
+    
+    public boolean nikVerifiable() {
+        try {
+            Integer.parseInt(nik);
+            return nik.length() == 8;
+        } catch (Exception e) {
+            return false;
+        }
     }
     
     public Document toDocument() {

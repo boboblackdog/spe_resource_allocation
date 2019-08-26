@@ -5,7 +5,6 @@
  */
 package com.example.spera_2.models;
 
-import java.sql.Timestamp;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
@@ -52,33 +51,6 @@ public class refTroops {
         this.gender = docx.getString("gender");
     }
     
-    public ObjectId get_id() { return _id; }
-    public void set_id(ObjectId _id) { this._id = _id; }
-    
-    public String getName() { return fullname; }
-    public void setName(String fullName) { this.fullname = fullName; }
-    
-    public String getNik() { return nik; }
-    public void setNik(String n_induk) { this.nik = n_induk; }
-    
-    public String getPosId() { return position_id; }
-    public void setPosId(String pos_id) { this.position_id = pos_id; }
-    
-    public String getGradeId() { return grade_id; }
-    public void setGradeId(String gradeId) { this.grade_id = gradeId; }
-    
-    public String getEmail() { return email_docotel; }
-    public void setEmail(String email) { this.email_docotel = email; }
-    
-    public String getMobile() { return mobile_phone; }
-    public void setMobile(String mobile) { this.mobile_phone = mobile; }
-    
-    public String getStat() { return status; }
-    public void setStat(String stat) { this.status = stat; }
-    
-    public String getGender() { return gender; }
-    public void setGender(String gend) { this.gender = gend; }
-    
     public boolean containsNull() {
         
         return (fullname == null || nik == null ||
@@ -88,6 +60,50 @@ public class refTroops {
                 );
         
     }
+    
+    public boolean goodRequestBody() {
+        
+        try {
+            return  //nik isn't already in the database
+                    (email_docotel.contains("@") && email_docotel.contains(".")) && //use regex later on in the future
+                    (mobile_phone.substring(0, 1).equalsIgnoreCase("0")) &&
+                    (gender.equalsIgnoreCase("male") || gender.equalsIgnoreCase("female")) &&
+                    (Integer.parseInt(position_id) >= 0 && Integer.parseInt(position_id) <= 2) &&
+                    (Integer.parseInt(grade_id) >= 0 && Integer.parseInt(grade_id) <= 6) &&
+                    (Integer.parseInt(status) >= 0 && Integer.parseInt(status) <= 2)
+                    ;
+        } catch (Exception e) {
+            return false;
+        }
+        
+    }
+    
+    public ObjectId get_id() { return _id; }
+    public void set_id(ObjectId _id) { this._id = _id; }
+    
+    public String getFullname() { return fullname; }
+    public void setFullname(String fullName) { this.fullname = fullName; }
+    
+    public String getNik() { return nik; }
+    public void setNik(String n_induk) { this.nik = n_induk; }
+    
+    public String getPosition_id() { return position_id; }
+    public void setPosition_id(String pos_id) { this.position_id = pos_id; }
+    
+    public String getGrade_id() { return grade_id; }
+    public void setGrade_id(String gradeId) { this.grade_id = gradeId; }
+    
+    public String getEmail_docotel() { return email_docotel; }
+    public void setEmail_docotel(String email) { this.email_docotel = email; }
+    
+    public String getMobile_phone() { return mobile_phone; }
+    public void setMobile_phone(String mobile) { this.mobile_phone = mobile; }
+    
+    public String getStatus() { return status; }
+    public void setStatus(String stat) { this.status = stat; }
+    
+    public String getGender() { return gender; }
+    public void setGender(String gend) { this.gender = gend; }
     
     public Document toDocument() {
         return new Document()

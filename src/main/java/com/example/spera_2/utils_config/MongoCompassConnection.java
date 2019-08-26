@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.example.spera_2.testconnection;
+package com.example.spera_2.utils_config;
 
 import com.example.spera_2.Spera2Application;
 import com.mongodb.MongoClient;
@@ -11,6 +11,7 @@ import com.mongodb.MongoCredential;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import static com.mongodb.client.model.Filters.eq;
 import java.io.File;
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -72,6 +73,10 @@ public class MongoCompassConnection {
         }
     }
     
+    public Document manualNikSearch(String nik) {
+        return this.collection.find(eq("nik", nik)).first();
+    }
+    
     private static MongoClient newClient(String host, int port) throws Exception {
         return new MongoClient(host, port);
     }
@@ -100,12 +105,14 @@ public class MongoCompassConnection {
             Document responseH, Document responseB, 
             Document requestH, Document requestB,
             String collectionName, String nik, String ip,
+            Exception ex,
             Timestamp t1, Timestamp t2
     ) {
         try {
             logger.info("log insertion start...");
             MongoCollection<Document> insertCollection = this.db.getCollection(collectionName);
             int isError;
+            String exc;
             if (responseB.getString("rc").equals("00")) {
                 isError = 0;
                 logger.info("not an error");
@@ -113,6 +120,8 @@ public class MongoCompassConnection {
                 isError = 1;
                 logger.warn("error status");
             }
+            if (ex != null) { exc = ex.toString(); } 
+            else            { exc = "none"; }
             logger.info("preparing mongo document...");
             Document insertIntoCollection = new Document()
                     .append("client_ip", ip)
@@ -125,6 +134,7 @@ public class MongoCompassConnection {
                     .append("response_datetime", t2)
                     .append("elapsed_time", t2.getTime()-t1.getTime())
                     .append("is_error", isError)
+                    .append("exception", exc)
                     ;
             logger.info("...mongo document prepared successfully");
             logger.info("inserting log document...");

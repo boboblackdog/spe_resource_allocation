@@ -1,6 +1,6 @@
 package com.example.spera_2;
 
-import com.example.spera_2.testconnection.TestConnection;
+import com.example.spera_2.utils_config.TestConnection;
 import java.sql.SQLException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
