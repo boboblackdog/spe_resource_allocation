@@ -33,6 +33,13 @@ public class UserProfileRequest {
         }
     }
     
+    @Override
+    public String toString() {
+        return    "nik: " + this.nik + ",%0D%0A" 
+                + "device_id: " + this.device_id + "%0D%0A"
+                ;
+    }
+    
     public Document toDocument() {
         return new Document()
                 .append("nik", nik)

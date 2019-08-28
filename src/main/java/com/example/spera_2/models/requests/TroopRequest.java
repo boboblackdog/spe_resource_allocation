@@ -22,8 +22,6 @@ public class TroopRequest {
         this.device_id = device_id;
     }
     
-    
-    
     public String getTroops() { return troops; }
     public void setTroops(String troops) { this.troops = troops; }
     
@@ -33,6 +31,13 @@ public class TroopRequest {
 //    public String getNikRequestor() { return nik_requestor; }
 //    public void setNikRequestor(String nik_requestor) { this.nik_requestor = nik_requestor; }
 
+    @Override
+    public String toString() {
+        return    "troops: " + this.troops + ",%0D%0A"
+                + "device_id: " + this.device_id + "%0D%0A"
+                ;
+    }
+    
     public Document toDocument() {
         return new Document()
 //                .append("nik_requestor", nik_requestor)

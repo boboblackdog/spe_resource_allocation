@@ -73,6 +73,10 @@ public class MongoCompassConnection {
         }
     }
     
+    public void manualInsertCore(Document docx, String collectionName) {
+        this.db.getCollection(collectionName).insertOne(docx);
+    }
+    
     public Document manualNikSearch(String nik) {
         return this.collection.find(eq("nik", nik)).first();
     }

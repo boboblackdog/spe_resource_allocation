@@ -54,6 +54,14 @@ public class UserLoginRequest {
     public String getDevice_id() { return device_id; }
     public void setDevice_id(String device_id) { this.device_id = device_id; }
     
+    @Override
+    public String toString() {
+        return    "username: " + this.username + ",%0D%0A"
+                + "password: " + this.password + ",%0D%0A"
+                + "device_id: " + this.device_id + "%0D%0A"
+                ;
+    }
+    
     public Document toDocument() {
         return new Document()
                 .append("username", username)

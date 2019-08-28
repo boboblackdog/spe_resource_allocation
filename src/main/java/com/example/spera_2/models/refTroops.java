@@ -105,6 +105,19 @@ public class refTroops {
     public String getGender() { return gender; }
     public void setGender(String gend) { this.gender = gend; }
     
+    @Override
+    public String toString() {
+        return    "fullname: " + this.fullname + ",%0D%0A"
+                + "nik: " + this.nik + ",%0D%0A"
+                + "position_id: " + this.position_id + ",%0D%0A"
+                + "grade_id: " + this.grade_id + ",%0D%0A"
+                + "email_docotel: " + this.email_docotel + ",%0D%0A"
+                + "mobile_phone: " + this.mobile_phone + ",%0D%0A"
+                + "status: " + this.status + ",%0D%0A"
+                + "gender: " + this.gender + "%0D%0A"
+                ;
+    }
+    
     public Document toDocument() {
         return new Document()
                 .append("fullname", this.fullname)

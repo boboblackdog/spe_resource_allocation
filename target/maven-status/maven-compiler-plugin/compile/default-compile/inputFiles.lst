@@ -13,11 +13,14 @@
 /Users/rakhadjo/NetBeansProjects/spera2/src/main/java/com/example/spera_2/Spera2Application.java
 /Users/rakhadjo/NetBeansProjects/spera2/src/main/java/com/example/spera_2/utils_config/Utils.java
 /Users/rakhadjo/NetBeansProjects/spera2/src/main/java/com/example/spera_2/repositories/refPositionsRepository.java
+/Users/rakhadjo/NetBeansProjects/spera2/src/main/java/com/example/spera_2/models/Report.java
 /Users/rakhadjo/NetBeansProjects/spera2/src/main/java/com/example/spera_2/controllers/logic/RealTroopController.java
 /Users/rakhadjo/NetBeansProjects/spera2/src/main/java/com/example/spera_2/models/requests/UserLoginRequest.java
 /Users/rakhadjo/NetBeansProjects/spera2/src/main/java/com/example/spera_2/models/requests/DashboardRequest.java
+/Users/rakhadjo/NetBeansProjects/spera2/src/main/java/com/example/spera_2/utils_config/SperabotHandler.java
 /Users/rakhadjo/NetBeansProjects/spera2/src/main/java/com/example/spera_2/more_models/Response.java
 /Users/rakhadjo/NetBeansProjects/spera2/src/main/java/com/example/spera_2/controllers/logic/RealController.java
+/Users/rakhadjo/NetBeansProjects/spera2/src/main/java/com/example/spera_2/models/Overtime.java
 /Users/rakhadjo/NetBeansProjects/spera2/src/main/java/com/example/spera_2/repositories/refTroopsRepository.java
 /Users/rakhadjo/NetBeansProjects/spera2/src/main/java/com/example/spera_2/models/UserBearer.java
 /Users/rakhadjo/NetBeansProjects/spera2/src/main/java/com/example/spera_2/more_models/refGrades.java
@@ -25,6 +28,8 @@
 /Users/rakhadjo/NetBeansProjects/spera2/src/main/java/com/example/spera_2/more_models/refPositions.java
 /Users/rakhadjo/NetBeansProjects/spera2/src/main/java/com/example/spera_2/controllers/logic/RealUserController.java
 /Users/rakhadjo/NetBeansProjects/spera2/src/main/java/com/example/spera_2/utils_config/MongoCompassConnection.java
+/Users/rakhadjo/NetBeansProjects/spera2/src/main/java/com/example/spera_2/repositories/ReportRepository.java
 /Users/rakhadjo/NetBeansProjects/spera2/src/main/java/com/example/spera_2/more_repositories/EmployeeRepository.java
 /Users/rakhadjo/NetBeansProjects/spera2/src/main/java/com/example/spera_2/more_models/refStatus.java
 /Users/rakhadjo/NetBeansProjects/spera2/src/main/java/com/example/spera_2/models/responses/ResponseBody.java
+/Users/rakhadjo/NetBeansProjects/spera2/src/main/java/com/example/spera_2/models/requests/RequestHeaderCustom.java

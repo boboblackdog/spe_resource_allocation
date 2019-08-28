@@ -10,8 +10,6 @@ import com.example.spera_2.utils_config.MySQLConnection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 
 /**
  *

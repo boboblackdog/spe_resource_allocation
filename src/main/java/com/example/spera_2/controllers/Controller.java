@@ -5,22 +5,28 @@
  */
 package com.example.spera_2.controllers;
 
+import com.example.spera_2.Spera2Application;
 import com.example.spera_2.controllers.logic.RealController;
 import com.example.spera_2.controllers.logic.RealTroopController;
 import com.example.spera_2.controllers.logic.RealUserController;
 import com.example.spera_2.models.Employee;
+import com.example.spera_2.models.Overtime;
+import com.example.spera_2.models.Report;
 import com.example.spera_2.models.requests.UserProfileRequest;
 import com.example.spera_2.models.refTroops;
 import com.example.spera_2.models.requests.DashboardRequest;
 import com.example.spera_2.models.requests.TroopRequest;
 import com.example.spera_2.models.requests.UserLoginRequest;
 import com.example.spera_2.models.responses.ResponseBody;
+import com.example.spera_2.repositories.ReportRepository;
 import com.example.spera_2.repositories.refGradesRepository;
 import com.example.spera_2.repositories.refPositionsRepository;
 import com.example.spera_2.repositories.refTroopsRepository;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.bson.Document;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -46,9 +52,13 @@ public class Controller {
     @Autowired
     private refGradesRepository refGradesRepo;
     
+    @Autowired
+    private ReportRepository reportRepo;
+    
     private final RealController realController = new RealController();
     private final RealTroopController realTroopController = new RealTroopController();
     private final RealUserController realUserController = new RealUserController();
+    private final Logger logger = LoggerFactory.getLogger(Spera2Application.class);
     
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public Document test() {
@@ -61,18 +71,8 @@ public class Controller {
     */
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ResponseEntity<Document> welcome() throws Exception {
-
+        
         return realController.welcome();
-        
-    }
-    
-    /*
-    method used to obtain all troop information
-    */
-    @RequestMapping(value = "/troops/list", method = RequestMethod.POST)
-    public ResponseEntity<ResponseBody> getAllTroops(@Valid @RequestBody TroopRequest tr, @RequestHeader String Authentication, HttpServletRequest request) throws Exception {
-        
-        return realTroopController.getAllTroops(tr, Authentication, refTroopsRepo.findAll(), request);
         
     }
     
@@ -114,8 +114,10 @@ public class Controller {
     method used to get positions from db
     */
     @RequestMapping(value = "/troops/positions", method = RequestMethod.GET)
-    public ResponseEntity<ResponseBody> getPositions(@RequestHeader String Authentication, HttpServletRequest request) {
-        
+    public ResponseEntity<ResponseBody> getPositions(@RequestHeader String Authentication, HttpServletRequest request) throws Exception {
+        /*
+        verification method required. request data manually if needed. 
+        */
         return realTroopController.getPositions(Authentication, refPositionsRepo.findAll() , request);
         
     }
@@ -124,9 +126,23 @@ public class Controller {
     method used to get grades from db
     */
     @RequestMapping(value = "/troops/grades", method = RequestMethod.GET)
-    public ResponseEntity<ResponseBody> getGrades(@RequestHeader String Authentication, HttpServletRequest request) {
-        
+    public ResponseEntity<ResponseBody> getGrades(@RequestHeader String Authentication, HttpServletRequest request) throws Exception {
+        /*
+        verification method required. request data manually if needed. 
+        */
         return realTroopController.getGrades(Authentication, refGradesRepo.findAll(), request);
+        
+    }
+    
+    /*
+    method used to obtain all troop information
+    */
+    @RequestMapping(value = "/troops/list", method = RequestMethod.POST)
+    public ResponseEntity<ResponseBody> getAllTroops(@Valid @RequestBody TroopRequest tr, @RequestHeader String Authentication, HttpServletRequest request) throws Exception {
+        /*
+        verification method required. request data manually if needed. 
+        */
+        return realTroopController.getAllTroops(tr, Authentication, refTroopsRepo.findAll(), request);
         
     }
     
@@ -134,12 +150,32 @@ public class Controller {
     method used to insert new troop
     */
     @RequestMapping(value = "/troops/add", method = RequestMethod.POST)
-    public ResponseEntity<ResponseBody> addTroops(@RequestHeader String Authentication, @Valid @RequestBody refTroops ref, HttpServletRequest request) {
+    public ResponseEntity<ResponseBody> addTroops(@RequestHeader String Authentication, @Valid @RequestBody refTroops ref, HttpServletRequest request) throws Exception {
         
         if (!ref.containsNull()) {
             refTroopsRepo.save(ref);
         }
         return realTroopController.addTroops(Authentication, ref, request);
+        
+    }
+    
+    /*
+    method used to insert new report
+    */
+    @RequestMapping(value = "/troops/report", method = RequestMethod.POST)
+    public ResponseEntity<ResponseBody> addReport(@RequestHeader String Authentication, @Valid @RequestBody Report report, HttpServletRequest request) throws Exception {
+        
+        return realTroopController.addReport(Authentication, report, request);
+        
+    }
+    
+    /*
+    method used to add overtime
+    */
+    @RequestMapping(value = "/troops/ot", method = RequestMethod.POST)
+    public ResponseEntity<ResponseBody> addOvertime(@RequestHeader String Authentication, @Valid @RequestBody Overtime overtime, HttpServletRequest request) throws Exception {
+        
+        return realTroopController.addOvertime(Authentication, overtime, request);
         
     }
 }
