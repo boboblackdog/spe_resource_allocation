@@ -13,73 +13,109 @@ import org.bson.Document;
  * @author rakhadjo
  */
 public class ResponseBody {
-    
+
     private String rc;
     private String message;
     private String action;
-    
+
     //CHANGE THESE TO PRIVATE ONCE MODIFIABLE
-    public String role;
-    public String menu;
+    public final String role = "admin";
+    public final String menu = "home, troops, account";
     //CHANGE THESE TO PRIVATE ONCE MODIFIABLE
-    
-    private Object data;
+
+    private Document data;
     private boolean log_success;
-    
+
+    private final void setCodes(RC code) {
+        switch (code) {
+            case SUCCESS:
+                this.rc = "00";
+                this.message = "success";
+                break;
+            case DNE:
+                this.rc = "10";
+                this.message = "dne";
+                break;
+            case INVALID_FMT:
+                this.rc = "11";
+                this.message = "invalid request format";
+                break;
+            case UNDEFINED:
+                this.rc = "99";
+                this.message = "undefined error";
+                break;
+            default:
+                this.rc = "what";
+                this.message = "lol";
+        }
+    }
+
     public ResponseBody() {
-        this.rc = "00";
-        this.message = "success";
-        this.role = "admin";
-        this.menu = "home, troops, account";
     }
-    
+
     public ResponseBody(RC responseCode) {
-        this.rc = responseCode.getCODE();
-        this.message = responseCode.getMESSAGE();
-        this.role = "admin";
-        this.menu = "home, troops, account";
+        setCodes(responseCode);
     }
-    
+
     public ResponseBody(String rc, String message) {
         this.rc = rc;
         this.message = message;
-        this.role = "admin";
-        this.menu = "home, troops, account";
         this.data = new Document();
     }
-    
+
     public ResponseBody(String rc, String message, Document data) {
         this.rc = rc;
         this.message = message;
-        this.role = "admin";
-        this.menu = "home, troops, account";
         this.data = data;
     }
-    
-    public String getRC() { return this.rc; }
-    public void setRC(String rc) { this.rc = rc; }
-    
-    public String getMessage() { return this.message; }
-    public void setMessage(String message) { this.message = message; }
-    
-    public String getAction() { return this.action; }
-    public void setAction(String action) { this.action = action; }
-    
-    public boolean getLog_success() { return log_success; }
-    public void setLog_success(boolean log_success) { this.log_success = log_success; }
-    
-    //public void append(String key, Object value) { this.data.append(key, value); }
 
-    public void setData(Object data) { this.data = data; }
-    public Object getData() { return this.data; }
-    
-    public Document toDocument() {
+    public String getRC() {
+        return this.rc;
+    }
+
+    public void setRC(String rc) {
+        this.rc = rc;
+    }
+
+    public String getMessage() {
+        return this.message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getAction() {
+        return this.action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
+    }
+
+    public boolean getLog_success() {
+        return log_success;
+    }
+
+    public void setLog_success(boolean log_success) {
+        this.log_success = log_success;
+    }
+
+    //public void append(String key, Object value) { this.data.append(key, value); }
+    public void setData(Document data) {
+        this.data = data;
+    }
+
+    public Object getData() {
+        return this.data;
+    }
+
+    public Document toJSON() {
         Document responseBody = new Document()
                 .append("rc", this.rc)
                 .append("message", this.message)
                 .append("role", this.role)
-                .append("menu", this.menu)
-                ;
+                .append("menu", this.menu);
         if (this.data != null) {
             try {
                 responseBody.append("data", (Document) this.data);
@@ -89,7 +125,5 @@ public class ResponseBody {
         }
         return responseBody;
     }
-    
+
 }
-
-
