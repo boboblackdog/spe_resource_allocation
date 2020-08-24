@@ -1,0 +1,25 @@
+spring:
+  data:
+    mongodb:
+      port: 27017
+      host: localhost
+      authentication-database: admin
+      database: spera
+---
+spring:
+    datasource:
+        driverClassName: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306//spera_portal?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC
+        username: root
+        password: password
+    jpa:
+        hibernate:
+            ddl-auto: update
+        generate-ddl: true
+        show-sql: true
+---
+spring:
+  profiles: docker
+  data:
+    mongodb:
+      host: api-database
