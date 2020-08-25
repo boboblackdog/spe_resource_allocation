@@ -7,12 +7,14 @@ package com.example.spera_2.more_models;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  *
  * @author rakhadjo
  */
-public class refStatus {
+@Document(collection = "refStatus")
+public class Status {
     @Id
     public ObjectId _id;
     public String status;
@@ -27,11 +29,18 @@ public class refStatus {
     public String getStatusName() { return status_name; }
     public void setStatusName(String status_name) { this.status_name = status_name; }
     
-    public refStatus() {}
+    public Status() {}
     
-    public refStatus(ObjectId _id, String status, String status_name) {
+    public Status(ObjectId _id, String status, String status_name) {
         this._id = _id;
         this.status = status;
         this.status_name = status_name;
+    }
+    
+    public org.bson.Document toJSON() {
+        return new org.bson.Document()
+                .append("_id", this._id)
+                .append("status", this.status)
+                .append("status_name", this.status_name);
     }
 }
