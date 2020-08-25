@@ -5,16 +5,17 @@
  */
 package com.example.spera_2.models;
 
-import org.bson.Document;
+import java.sql.Timestamp;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  *
  * @author rakhadjo
  */
-//@Document(collection = "refTroops")
-public class refTroops {
+@Document(collection = "refTroops")
+public class Troop {
     
     @Id
     private ObjectId _id;
@@ -26,9 +27,10 @@ public class refTroops {
     private String mobile_phone;
     private String status;
     private String gender;
+    private Timestamp datetime_inserted;
     
-    public refTroops() {}
-    public refTroops(ObjectId _id, String fullname, String nik, String position_id, String grade_id, String email_docotel, String mobile_phone, String status, String gender) {
+    public Troop() {}
+    public Troop(ObjectId _id, String fullname, String nik, String position_id, String grade_id, String email_docotel, String mobile_phone, String status, String gender) {
         this._id = _id;
         this.fullname = fullname;
         this.nik = nik;
@@ -40,7 +42,7 @@ public class refTroops {
         this.gender = gender;
     }
     
-    public refTroops(Document docx) {
+    public Troop(org.bson.Document docx) {
         this.fullname = docx.getString("fullname");
         this.nik = docx.getString("nik");
         this.position_id = docx.getString("position_id");
@@ -78,32 +80,35 @@ public class refTroops {
         
     }
     
-    public ObjectId get_id() { return _id; }
+    public ObjectId get_id() { return this._id; }
     public void set_id(ObjectId _id) { this._id = _id; }
     
-    public String getFullname() { return fullname; }
+    public String getFullname() { return this.fullname; }
     public void setFullname(String fullName) { this.fullname = fullName; }
     
-    public String getNik() { return nik; }
+    public String getNik() { return this.nik; }
     public void setNik(String n_induk) { this.nik = n_induk; }
     
-    public String getPosition_id() { return position_id; }
+    public String getPosition_id() { return this.position_id; }
     public void setPosition_id(String pos_id) { this.position_id = pos_id; }
     
-    public String getGrade_id() { return grade_id; }
+    public String getGrade_id() { return this.grade_id; }
     public void setGrade_id(String gradeId) { this.grade_id = gradeId; }
     
-    public String getEmail_docotel() { return email_docotel; }
+    public String getEmail_docotel() { return this.email_docotel; }
     public void setEmail_docotel(String email) { this.email_docotel = email; }
     
-    public String getMobile_phone() { return mobile_phone; }
+    public String getMobile_phone() { return this.mobile_phone; }
     public void setMobile_phone(String mobile) { this.mobile_phone = mobile; }
     
-    public String getStatus() { return status; }
+    public String getStatus() { return this.status; }
     public void setStatus(String stat) { this.status = stat; }
     
-    public String getGender() { return gender; }
+    public String getGender() { return this.gender; }
     public void setGender(String gend) { this.gender = gend; }
+    
+    public Timestamp getDatetime_Inserted() { return this.datetime_inserted; }
+    public void setDatetime_Inserted(Timestamp datetime_inserted) {this.datetime_inserted = datetime_inserted; }
     
     @Override
     public String toString() {
@@ -118,8 +123,8 @@ public class refTroops {
                 ;
     }
     
-    public Document toDocument() {
-        return new Document()
+    public org.bson.Document toDocument() {
+        return new org.bson.Document()
                 .append("fullname", this.fullname)
                 .append("nik", this.nik)
                 .append("position_id", this.position_id)
@@ -128,6 +133,7 @@ public class refTroops {
                 .append("mobile_phone", this.mobile_phone)
                 .append("status", this.status)
                 .append("gender", this.gender)
+                .append("datetime_inserted", this.datetime_inserted)
                 ;
     }
 }

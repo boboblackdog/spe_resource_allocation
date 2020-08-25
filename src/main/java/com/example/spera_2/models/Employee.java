@@ -61,7 +61,7 @@ public class Employee {
         this.status = status;
     }
 
-    public Employee(refTroops ref) {
+    public Employee(Troop ref) {
         this.nik = ref.getNik();
         this.fullname = ref.getFullname();
         this.email = ref.getEmail_docotel();
@@ -128,7 +128,7 @@ public class Employee {
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
 
-    public Document toDocument() {
+    public Document toJSON() {
         return new Document()
                 .append("nik", nik)
                 .append("fullname", fullname)
