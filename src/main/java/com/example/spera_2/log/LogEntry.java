@@ -6,7 +6,6 @@
 package com.example.spera_2.log;
 
 import java.sql.Timestamp;
-import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 
@@ -62,35 +61,35 @@ public class LogEntry {
         this.client_ip = client_ip;
     }
 
-    public Document getRequest_header() {
+    public org.bson.Document getRequest_header() {
         return request_header;
     }
 
-    public void setRequest_header(Document request_header) {
+    public void setRequest_header(org.bson.Document request_header) {
         this.request_header = request_header;
     }
 
-    public Document getRequest_body() {
+    public org.bson.Document getRequest_body() {
         return request_body;
     }
 
-    public void setRequest_body(Document request_body) {
+    public void setRequest_body(org.bson.Document request_body) {
         this.request_body = request_body;
     }
 
-    public Document getResponse_header() {
+    public org.bson.Document getResponse_header() {
         return response_header;
     }
 
-    public void setResponse_header(Document response_header) {
+    public void setResponse_header(org.bson.Document response_header) {
         this.response_header = response_header;
     }
 
-    public Document getResponse_body() {
+    public org.bson.Document getResponse_body() {
         return response_body;
     }
 
-    public void setResponse_body(Document response_body) {
+    public void setResponse_body(org.bson.Document response_body) {
         this.response_body = response_body;
     }
 
